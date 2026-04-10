@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Passage | Accessibility Statement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --black-light: #1a1a1a;
+            --black-medium: #0d0d0d;
+            --white: #ffffff;
+            --gold: #d4af37;
+            --gold-dark: #b8960c;
+            --gold-light: #f4e4bc;
+            --gray: #888888;
+            --border: #333333;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== DROPDOWN NAVIGATION (Mobile & Tablet Optimized) ========== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.85);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gold), var(--white), var(--gold));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 3s infinite;
+            letter-spacing: -0.5px;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Desktop nav links (hidden on mobile, but we transform) */
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--white));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hamburger button (mobile only) */
+        .menu-toggle {
+            display: none;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 10px 14px;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .menu-toggle span {
+            width: 26px;
+            height: 2px;
+            background-color: var(--gold);
+            display: block;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .menu-toggle:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: var(--gold);
+        }
+
+        /* Dropdown menu for mobile */
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(12px);
+            width: 100%;
+            padding: 20px 20px 24px;
+            border-radius: 0 0 24px 24px;
+            border-bottom: 1px solid var(--border);
+            gap: 18px;
+            position: absolute;
+            top: 78px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.2s;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            color: var(--gold);
+            padding-left: 8px;
+            background: linear-gradient(90deg, rgba(212,175,55,0.1), transparent);
+        }
+
+        .dropdown-menu.show {
+            display: flex;
+        }
+
+        /* Policy Header Styles */
+        .policy-header {
+            margin: 40px 0 28px 0;
+            position: relative;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            gap: 12px;
+            color: var(--gold-light);
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--white), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 12px;
+            word-break: break-word;
+        }
+
+        .last-updated {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        /* Policy Content - fully responsive */
+        .policy-content {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(13, 13, 13, 0.7));
+            backdrop-filter: blur(4px);
+            border-radius: 28px;
+            padding: 32px 24px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .policy-content h2 {
+            font-size: 1.6rem;
+            text-align: left;
+            margin: 32px 0 16px 0;
+            background: linear-gradient(135deg, var(--white), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .policy-content p {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .policy-content ul {
+            margin: 16px 0 24px 20px;
+        }
+
+        .policy-content li {
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .policy-content li strong {
+            color: var(--gold);
+        }
+
+        .policy-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(212, 175, 55, 0.4);
+            transition: all 0.2s;
+            word-break: break-word;
+        }
+
+        /* Modern Footer Styles */
+        .modern-footer {
+            background: linear-gradient(135deg, var(--black-medium), #0a0a0a);
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+            padding: 48px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section p {
+            color: var(--gray);
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section ul li a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            background: var(--gold);
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--white);
+            transition: fill 0.3s ease;
+        }
+
+        .social-icon:hover svg {
+            fill: var(--black);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Scholarship Hub button */
+        .scholarship-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--gold);
+            backdrop-filter: blur(4px);
+            white-space: nowrap;
+        }
+
+        .scholarship-button:hover {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .newsletter-input {
+            padding: 12px 16px;
+            background: var(--black);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .newsletter-btn {
+            background: var(--gold);
+            color: var(--black);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .newsletter-btn:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ========== FULLY RESPONSIVE: PHONE OPTIMIZATION ========== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 18px;
+            }
+            
+            h1 {
+                font-size: 1.9rem;
+                line-height: 1.2;
+            }
+            
+            .policy-content {
+                padding: 24px 18px;
+                border-radius: 24px;
+            }
+            
+            .policy-content h2 {
+                font-size: 1.4rem;
+                margin-top: 28px;
+            }
+            
+            .policy-content p, .policy-content li {
+                font-size: 0.95rem;
+            }
+            
+            /* Hide regular nav-links on mobile, show hamburger */
+            .nav-links {
+                display: none;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .navbar {
+                padding: 14px 0;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 18px;
+            }
+            
+            .footer-bottom-links {
+                justify-content: center;
+            }
+            
+            .footer-bottom-right {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .scholarship-button {
+                white-space: normal;
+                text-align: center;
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+            
+            .footer-content {
+                gap: 32px;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .newsletter-form {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+        }
+        
+        /* For very small devices (<=480px) */
+        @media (max-width: 480px) {
+            .policy-content {
+                padding: 20px 16px;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .back-link {
+                font-size: 0.85rem;
+            }
+            
+            .dropdown-menu a {
+                font-size: 1rem;
+                padding: 8px 0;
+            }
+            
+            .dropdown-menu {
+                top: 72px;
+                padding: 18px 16px;
+            }
+        }
+        
+        /* Focus ring accessibility */
+        :focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+        
+        button:focus-visible, a:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Glossy Navigation with Dropdown for Mobile -->
+        <nav class="navbar">
+            <div class="logo"><a href="index.html">PASSAGE SHI.</a></div>
+            <!-- Desktop nav links (hidden on mobile) -->
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="jobs.html">Jobs</a>
+                <a href="visa.html">Visa Guide</a>
+                <a href="routes.html">Immigration</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <!-- Hamburger Toggle Button (mobile only) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        
+        <!-- Dropdown Menu (Mobile) -->
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="visa.html">Visa Guide</a>
+            <a href="routes.html">Immigration</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="policy-header">
+            <a href="public-policy.html" class="back-link">← Back to Public Policy</a>
+            <h1>Accessibility Statement</h1>
+            <p class="last-updated">Last Updated: April 10, 2026</p>
+        </div>
+
+        <div class="policy-content">
+            <h2>Our Commitment</h2>
+            <p>Passage is committed to ensuring digital accessibility for all users, including individuals with disabilities. We strive to provide an inclusive experience that respects the dignity and independence of every person who uses our platform. We believe everyone deserves equal access to global career opportunities.</p>
+
+            <h2>Standards and Guidelines</h2>
+            <p>We follow the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA as our accessibility standard. These guidelines explain how to make web content more accessible to people with a wide range of disabilities, including visual, auditory, physical, speech, cognitive, language, learning, and neurological disabilities.</p>
+
+            <h2>Accessibility Features</h2>
+            <p>Our website includes the following accessibility features:</p>
+            <ul>
+                <li><strong>Keyboard Navigation:</strong> Full keyboard accessibility for all interactive elements. Use Tab, Shift+Tab, Enter, and Space keys to navigate.</li>
+                <li><strong>Screen Reader Compatibility:</strong> Semantic HTML structure for proper screen reader interpretation with ARIA landmarks.</li>
+                <li><strong>Color Contrast:</strong> Sufficient contrast ratios between text and background meeting WCAG AA standards.</li>
+                <li><strong>Resizable Text:</strong> Text can be zoomed up to 200% without loss of functionality or content.</li>
+                <li><strong>Alternative Text:</strong> Meaningful alt text for all informative images and decorative elements properly marked.</li>
+                <li><strong>Focus Indicators:</strong> Visible focus outlines for keyboard users to track navigation position.</li>
+                <li><strong>Clear Headings:</strong> Proper heading hierarchy for easier navigation and content comprehension.</li>
+                <li><strong>Consistent Navigation:</strong> Predictable and consistent placement of navigation elements across all pages.</li>
+            </ul>
+
+            <h2>Assistive Technologies</h2>
+            <p>Our website is designed to work with popular assistive technologies, including:</p>
+            <ul>
+                <li>Screen readers (JAWS, NVDA, VoiceOver, TalkBack, ChromeVox)</li>
+                <li>Screen magnification software (ZoomText, MAGic)</li>
+                <li>Speech recognition software (Dragon NaturallySpeaking, Windows Speech Recognition)</li>
+                <li>Alternative input devices (switch controls, eye tracking, on-screen keyboards)</li>
+            </ul>
+
+            <h2>Ongoing Efforts</h2>
+            <p>Accessibility is an ongoing commitment that evolves with technology and user needs. We:</p>
+            <ul>
+                <li>Conduct regular accessibility audits using automated tools and manual testing.</li>
+                <li>Train our design and development team on inclusive design and accessibility best practices.</li>
+                <li>Monitor user feedback to identify and address barriers quickly.</li>
+                <li>Include accessibility requirements in our development lifecycle from concept to deployment.</li>
+                <li>Perform quarterly accessibility reviews with assistive technology users.</li>
+            </ul>
+
+            <h2>Limitations and Alternatives</h2>
+            <p>While we strive to make all content accessible, some third-party content, legacy features, or embedded widgets may not be fully accessible. If you encounter any accessibility barriers on our platform, please contact us immediately, and we will work to provide the information in an alternative format that meets your needs.</p>
+
+            <h2>Feedback and Support</h2>
+            <p>We welcome your feedback on the accessibility of Passage. If you experience any difficulty accessing any part of our website or have suggestions for improvement, please contact our accessibility team:</p>
+            <ul>
+                <li>Email: <a href="mailto:scholarshiphub231@gmail.com">scholarshiphub231@gmail.com</a> (we typically respond within 2 business days)</li>
+                <li>WhatsApp: <a href="https://wa.me/0760766122">+231 76 076 6122</a></li>
+                <li>Phone: +231 76 076 6122 (TTY relay service available upon request)</li>
+                <li>Contact Form: <a href="contact.html">Visit our Contact page</a> and mention "Accessibility Support"</li>
+            </ul>
+
+            <h2>Accessibility Features Request</h2>
+            <p>If you need a specific accessibility feature or alternative format (large print, braille, audio transcription, accessible PDF, or plain text), please let us know. We will make reasonable efforts to accommodate your needs within 5-7 business days. There is no charge for requesting accessible formats.</p>
+
+            <h2>Third-Party Content</h2>
+            <p>Our website may contain links to third-party websites or services such as visa application portals, employer career pages, or government resources. While we encourage accessibility on all platforms, we cannot guarantee the accessibility of external content. We actively evaluate third-party partners for accessibility when possible.</p>
+
+            <h2>Review and Updates</h2>
+            <p>This Accessibility Statement is reviewed and updated regularly to reflect improvements and changing standards. The "Last Updated" date reflects the most recent changes. We will notify users of material changes through our website and, where appropriate, via email notifications. Historical versions are available upon request.</p>
+
+            <h2>Evaluation Methods</h2>
+            <p>Passage evaluates accessibility using a combination of automated testing (axe, Lighthouse, WAVE) and manual testing with keyboard-only navigation, screen readers (NVDA, VoiceOver), and color contrast analyzers. We also engage users with disabilities for user testing sessions bi-annually.</p>
+
+            <h2>Formal Complaints</h2>
+            <p>If you believe we have not adequately addressed an accessibility concern, you may file a formal complaint by emailing <a href="mailto:scholarshiphub231@gmail.com">compliance@passage.com</a>. We will acknowledge receipt within 3 business days and work toward resolution within 15 business days.</p>
+        </div>
+    </div>
+
+    <!-- Modern Footer -->
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Passage</h4>
+                    <p>Your trusted passage to working abroad. We connect job seekers directly with verified employers worldwide. No middlemen, no hidden fees. Empowering global careers with transparency.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/passage" target="_blank" class="social-icon" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/passage" target="_blank" class="social-icon" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/passage" target="_blank" class="social-icon" aria-label="X (Twitter)">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="jobs.html">Browse Jobs</a></li>
+                        <li><a href="visa.html">Visa Guide</a></li>
+                        <li><a href="routes.html">Immigration Routes</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="Accessibility.html">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Popular Destinations</h4>
+                    <ul>
+                        <li><a href="jobs.html">Canada Jobs</a></li>
+                        <li><a href="jobs.html">Germany Jobs</a></li>
+                        <li><a href="jobs.html">Australia Jobs</a></li>
+                        <li><a href="jobs.html">UK Jobs</a></li>
+                        <li><a href="jobs.html">UAE Jobs</a></li>
+                        <li><a href="jobs.html">USA Jobs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email for newsletter">
+                        <button type="submit" class="newsletter-btn">Subscribe →</button>
+                    </form>
+                    <p style="margin-top: 16px; font-size: 0.8rem;">Get latest jobs and visa updates.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-links">
+                    <a href="Privacy_Policy.html">Privacy Policy</a>
+                    <a href="Terms_of_Service.html">Terms of Service</a>
+                    <a href="Cookie_Policy.html">Cookie Policy</a>
+                    <a href="Accessibility.html">Accessibility</a>
+                </div>
+                
+                <div class="footer-bottom-right">
+                    <a href="https://scholarshiphubinc.netlify.app/" target="_blank" class="scholarship-button" rel="noopener noreferrer">
+                        <span class="scholarship-icon"></span>
+                        <span>Scholarship Hub Inc.</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border);">
+                <p>© 2025 Passage - Direct to Employers. Work Abroad.</p>
+                <p style="margin-top: 8px; font-size: 0.75rem; color: var(--gray);">We are not a law firm. For legal advice, consult a registered immigration lawyer.</p>
+                <p style="margin-top: 8px; font-size: 0.75rem;">WhatsApp us: <a href="https://wa.me/231760766221" style="color: var(--gold);">+231 76 076 6221</a> | Email: scholarshiphub231@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile dropdown menu functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        
+        if (menuToggle && dropdownMenu) {
+            // Toggle menu on button click
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const expanded = menuToggle.getAttribute('aria-expanded') === 'true' ? false : true;
+                dropdownMenu.classList.toggle('show');
+                menuToggle.setAttribute('aria-expanded', expanded);
+                
+                // Animate hamburger to X (optional)
+                const spans = menuToggle.querySelectorAll('span');
+                if (dropdownMenu.classList.contains('show')) {
+                    spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+            
+            // Close dropdown when clicking outside (optional)
+            document.addEventListener('click', function(event) {
+                if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    if (dropdownMenu.classList.contains('show')) {
+                        dropdownMenu.classList.remove('show');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        const spans = menuToggle.querySelectorAll('span');
+                        spans[0].style.transform = 'none';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'none';
+                    }
+                }
+            });
+            
+            // Close dropdown if any link inside is clicked (smooth navigation)
+            const dropdownLinks = dropdownMenu.querySelectorAll('a');
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    dropdownMenu.classList.remove('show');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    const spans = menuToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                });
+            });
+        }
+
+        // Newsletter subscription handler
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                const email = emailInput.value.trim();
+                if (email && email.includes('@') && email.includes('.')) {
+                    alert(`Thank you for subscribing! We'll send career updates to ${email}`);
+                    emailInput.value = '';
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+        }
+
+        // Additional focus ring + smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

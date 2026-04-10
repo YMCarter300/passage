@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Passage | Immigration Contacts & Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --black-light: #1a1a1a;
+            --black-medium: #0d0d0d;
+            --white: #ffffff;
+            --gold: #d4af37;
+            --gold-dark: #b8960c;
+            --gold-light: #f4e4bc;
+            --gray: #888888;
+            --border: #333333;
+            --blue: #3b82f6;
+            --green: #22c55e;
+            --orange: #f97316;
+            --purple: #a855f7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== DROPDOWN NAVIGATION (Mobile & Tablet Optimized) ========== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.85);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--gold), var(--white), var(--gold));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Desktop nav links (hidden on mobile) */
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--white));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hamburger button (mobile only) */
+        .menu-toggle {
+            display: none;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 10px 14px;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .menu-toggle span {
+            width: 26px;
+            height: 2px;
+            background-color: var(--gold);
+            display: block;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .menu-toggle:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: var(--gold);
+        }
+
+        /* Dropdown menu for mobile */
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(12px);
+            width: 100%;
+            padding: 20px 20px 24px;
+            border-radius: 0 0 24px 24px;
+            border-bottom: 1px solid var(--border);
+            gap: 18px;
+            position: absolute;
+            top: 78px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        .dropdown-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.2s;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            color: var(--gold);
+            padding-left: 8px;
+            background: linear-gradient(90deg, rgba(212,175,55,0.1), transparent);
+        }
+
+        .dropdown-menu.show {
+            display: flex;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 32px 0 16px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--white), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        h2 span {
+            color: var(--gold);
+            background: none;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--gold);
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto 32px;
+            text-align: center;
+        }
+
+        .immigration-section {
+            margin: 30px 0 50px;
+        }
+
+        /* Glossy Country Tabs - Responsive */
+        .country-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 28px;
+            justify-content: center;
+        }
+
+        .country-tab {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(13, 13, 13, 0.9));
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 8px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .country-tab:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .country-tab.active {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            border-color: var(--gold);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .country-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .country-content.active-country {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        /* Glossy Contact Cards */
+        .contact-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(13, 13, 13, 0.9));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            padding: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .contact-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
+        }
+
+        .contact-card .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .badge-lawyer { background: rgba(59, 130, 246, 0.2); color: var(--blue); }
+        .badge-consultant { background: rgba(34, 197, 94, 0.2); color: var(--green); }
+        .badge-official { background: rgba(249, 115, 22, 0.2); color: var(--orange); }
+        .badge-agency { background: rgba(212, 175, 55, 0.2); color: var(--gold); }
+
+        .contact-card h4 {
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+
+        .contact-card .type {
+            color: var(--gold);
+            font-size: 0.75rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-card .details {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .contact-card .contact-links {
+            margin-top: 12px;
+        }
+
+        .contact-card .contact-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 14px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: var(--white);
+            font-size: 0.75rem;
+            margin-right: 8px;
+            margin-bottom: 6px;
+            transition: all 0.2s;
+        }
+
+        .contact-card .contact-links a:hover {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .official-link {
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        .official-link a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+
+        .official-link a:hover {
+            text-decoration: underline;
+            color: var(--gold-light);
+        }
+
+        /* Resource Banner */
+        .resource-banner {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 32px 24px;
+            text-align: center;
+            margin: 40px 0 24px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .resource-banner:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .resource-banner h3 {
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .resource-banner p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .resource-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        /* Modern Footer */
+        .modern-footer {
+            background: linear-gradient(135deg, var(--black-medium), #0a0a0a);
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+            padding: 48px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 36px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+        }
+
+        .footer-section p {
+            color: var(--gray);
+            line-height: 1.6;
+            font-size: 0.85rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 14px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            background: var(--gold);
+        }
+
+        .social-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--white);
+        }
+
+        .social-icon:hover svg {
+            fill: var(--black);
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .newsletter-input {
+            padding: 10px 14px;
+            background: var(--black);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            color: var(--white);
+            font-size: 0.85rem;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .newsletter-btn {
+            background: var(--gold);
+            color: var(--black);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .newsletter-btn:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border);
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .footer-bottom-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--gold);
+        }
+
+        .scholarship-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+            padding: 7px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--gold);
+            backdrop-filter: blur(4px);
+            white-space: nowrap;
+        }
+
+        .scholarship-button:hover {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom-right {
+            display: flex;
+            align-items: center;
+        }
+
+        /* ========== RESPONSIVE PHONE OPTIMIZATION ========== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 18px;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+                margin-top: 24px;
+            }
+            
+            .subtitle {
+                font-size: 0.85rem;
+            }
+            
+            .country-tabs {
+                gap: 8px;
+            }
+            
+            .country-tab {
+                padding: 6px 14px;
+                font-size: 0.75rem;
+            }
+            
+            .contacts-grid {
+                gap: 18px;
+            }
+            
+            .contact-card {
+                padding: 16px;
+            }
+            
+            .resource-banner {
+                padding: 24px 18px;
+            }
+            
+            .resource-banner h3 {
+                font-size: 1.1rem;
+            }
+            
+            .resource-buttons .btn-primary, .resource-buttons .btn-outline {
+                padding: 8px 18px;
+                font-size: 0.8rem;
+            }
+            
+            /* Hide desktop nav, show hamburger */
+            .nav-links {
+                display: none;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .navbar {
+                padding: 14px 0;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+            }
+            
+            .footer-bottom-links {
+                justify-content: center;
+            }
+            
+            .footer-bottom-right {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .scholarship-button {
+                white-space: normal;
+                text-align: center;
+                padding: 7px 16px;
+                font-size: 0.75rem;
+            }
+            
+            .footer-content {
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .newsletter-form {
+                max-width: 260px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .country-tab {
+                padding: 5px 12px;
+                font-size: 0.7rem;
+            }
+            
+            .contact-card h4 {
+                font-size: 0.95rem;
+            }
+            
+            .dropdown-menu a {
+                font-size: 1rem;
+                padding: 8px 0;
+            }
+            
+            .dropdown-menu {
+                top: 72px;
+                padding: 16px;
+            }
+        }
+        
+        /* Focus ring accessibility */
+        :focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+        
+        button:focus-visible, a:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation with Dropdown for Mobile -->
+        <nav class="navbar">
+            <div class="logo"><a href="index.html">PASSAGE SHI.</a></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="jobs.html">Jobs</a>
+                <a href="visa.html">Visa Guide</a>
+                <a href="routes.html">Immigration</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="visa.html">Visa Guide</a>
+            <a href="routes.html">Immigration</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <h2>Immigration <span>Contacts</span></h2>
+        <p class="subtitle">Connect with verified immigration lawyers, consultants, and government resources worldwide</p>
+
+        <div class="country-tabs" id="countryTabs">
+            <div class="country-tab active" data-country="canada">🇨🇦 Canada</div>
+            <div class="country-tab" data-country="usa">🇺🇸 USA</div>
+            <div class="country-tab" data-country="uk">🇬🇧 UK</div>
+            <div class="country-tab" data-country="germany">🇩🇪 Germany</div>
+            <div class="country-tab" data-country="australia">🇦🇺 Australia</div>
+            <div class="country-tab" data-country="france">🇫🇷 France</div>
+            <div class="country-tab" data-country="netherlands">🇳🇱 Netherlands</div>
+            <div class="country-tab" data-country="sweden">🇸🇪 Sweden</div>
+            <div class="country-tab" data-country="portugal">🇵🇹 Portugal</div>
+            <div class="country-tab" data-country="spain">🇪🇸 Spain</div>
+            <div class="country-tab" data-country="italy">🇮🇹 Italy</div>
+            <div class="country-tab" data-country="switzerland">🇨🇭 Switzerland</div>
+            <div class="country-tab" data-country="norway">🇳🇴 Norway</div>
+            <div class="country-tab" data-country="denmark">🇩🇰 Denmark</div>
+            <div class="country-tab" data-country="finland">🇫🇮 Finland</div>
+            <div class="country-tab" data-country="belgium">🇧🇪 Belgium</div>
+            <div class="country-tab" data-country="austria">🇦🇹 Austria</div>
+            <div class="country-tab" data-country="japan">🇯🇵 Japan</div>
+            <div class="country-tab" data-country="southkorea">🇰🇷 South Korea</div>
+            <div class="country-tab" data-country="singapore">🇸🇬 Singapore</div>
+            <div class="country-tab" data-country="malaysia">🇲🇾 Malaysia</div>
+            <div class="country-tab" data-country="thailand">🇹🇭 Thailand</div>
+            <div class="country-tab" data-country="vietnam">🇻🇳 Vietnam</div>
+            <div class="country-tab" data-country="uae">🇦🇪 UAE</div>
+            <div class="country-tab" data-country="saudiarabia">🇸🇦 Saudi Arabia</div>
+            <div class="country-tab" data-country="qatar">🇶🇦 Qatar</div>
+            <div class="country-tab" data-country="nz">🇳🇿 New Zealand</div>
+            <div class="country-tab" data-country="ireland">🇮🇪 Ireland</div>
+            <div class="country-tab" data-country="brazil">🇧🇷 Brazil</div>
+            <div class="country-tab" data-country="mexico">🇲🇽 Mexico</div>
+        </div>
+
+        <!-- Canada -->
+        <div id="canada" class="country-content active-country">
+            <div class="contacts-grid">
+                <div class="contact-card"><span class="badge badge-lawyer">Immigration Lawyer</span><h4>Matthew Jeffries Law</h4><div class="type">Canadian Immigration Law Firm</div><div class="details">Work permits, LMIA, Express Entry, PR applications. 15+ years experience.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 IRCC Canada →</a></div></div>
+                <div class="contact-card"><span class="badge badge-consultant">Regulated Consultant</span><h4>Maple Immigration Services</h4><div class="type">RCIC Licensed</div><div class="details">Express Entry, PNP, LMIA applications. Free initial assessment.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Canada →</a></div></div>
+                <div class="contact-card"><span class="badge badge-official">Government</span><h4>IRCC Help Centre</h4><div class="type">Official Immigration Support</div><div class="details">Free government resources, application guides, and webinars.</div><div class="contact-links"><a href="#">📞 1-888-242-2100</a><a href="#">🌐 Website</a></div></div>
+                <div class="contact-card"><span class="badge badge-agency">Settlement Agency</span><h4>YMCA Newcomers</h4><div class="type">Free Settlement Services</div><div class="details">Free support for newcomers: housing, job search, language classes.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📱 WhatsApp</a></div></div>
+            </div>
+        </div>
+
+        <!-- USA -->
+        <div id="usa" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Immigration Attorney</span><h4>US Work Visa Center</h4><div class="type">AILA Member</div><div class="details">H-1B, H-2B, L-1, Green Card sponsorships. 20+ years experience.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 USCIS →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>USA Green Card Experts</h4><div class="type">DOJ Accredited</div><div class="details">Family-based, employment-based visas. PERM labor certification.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 US Employment Visas →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>USCIS Contact Center</h4><div class="type">Official Support</div><div class="details">Visa status inquiries, application updates, free resources.</div><div class="contact-links"><a href="#">📞 1-800-375-5283</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Non-Profit</span><h4>Immigrant Legal Resource Center</h4><div class="type">Free Legal Clinics</div><div class="details">Free immigration legal services for low-income workers.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- UK -->
+        <div id="uk" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">OISC Registered</span><h4>UK Visa Solutions</h4><div class="type">Level 3 Adviser</div><div class="details">Skilled Worker Visa, Health & Care Visa, Sponsor Licenses.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 UK Gov →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Adviser</span><h4>Work in UK Ltd</h4><div class="type">Specialist in Work Visas</div><div class="details">Health & Care Worker visa, Seasonal Worker visa.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Skilled Worker Visa →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>UK Visas & Immigration</h4><div class="type">Official Helpline</div><div class="details">Visa application support, status checks, free online resources.</div><div class="contact-links"><a href="#">📞 0300 790 0000</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Migrant Help</span><h4>Migrant Help UK</h4><div class="type">Charity Organization</div><div class="details">Free advice for migrants on visas, housing, employment rights.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📞 Helpline</a></div></div></div></div>
+
+        <!-- Germany -->
+        <div id="germany" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">German Immigration Lawyer</span><h4>Berlin Legal Partners</h4><div class="type">Fachanwalt für Ausländerrecht</div><div class="details">EU Blue Card, Skilled Worker Visa, Opportunity Card. English support.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Make it in Germany →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Visa Consultant</span><h4>Germany Work Visa Center</h4><div class="type">Recognition Partner</div><div class="details">Degree recognition, visa application assistance, job placement.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 BAMF →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Federal Office for Migration</h4><div class="type">BAMF</div><div class="details">Official information on work visas, recognition, integration.</div><div class="contact-links"><a href="#">📞 +49 911 843 0</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Welcome Center</span><h4>Berlin Welcome Centre</h4><div class="type">Free Support for Immigrants</div><div class="details">Free advice on visas, housing, childcare, integration.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Australia -->
+        <div id="australia" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">MARA Registered Agent</span><h4>Australian Visa Experts</h4><div class="type">MARN Registered</div><div class="details">482 TSS visa, 189/190 PR, 494 Regional visa. Skills assessment.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Home Affairs →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Migration Consultant</span><h4>Down Under Immigration</h4><div class="type">Specialist in Work Visas</div><div class="details">Employer sponsorship, Working Holiday visas, skills assessment.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Working in Australia →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Department of Home Affairs</h4><div class="type">Official Immigration</div><div class="details">Visa applications, status checks, free online resources.</div><div class="contact-links"><a href="#">📞 13 18 81</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Settlement Services</span><h4>AMES Australia</h4><div class="type">Free Migrant Support</div><div class="details">Free English classes, job search support, settlement services.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📞 +61 3 9929 4100</a></div></div></div></div>
+
+        <!-- France -->
+        <div id="france" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">French Immigration Lawyer</span><h4>Paris Legal Immigration</h4><div class="type">Avocat en Droit des Étrangers</div><div class="details">Talent Passport, EU Blue Card, Work permits, French citizenship.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 France-Visas →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in France</h4><div class="type">Specialist in Work Visas</div><div class="details">Talent Passport, ICT visa, Seasonal work visa. OFII assistance.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in France Guide →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>French Ministry of Interior</h4><div class="type">Official Immigration</div><div class="details">Visa applications, residency permits, citizenship, OFII integration.</div><div class="contact-links"><a href="#">📞 +33 1 71 05 00 00</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">French Office for Immigration</span><h4>OFII</h4><div class="type">Official Integration Agency</div><div class="details">Medical exams, civic training, French language courses for newcomers.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📞 Helpline</a></div></div></div></div>
+
+        <!-- Netherlands -->
+        <div id="netherlands" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Dutch Immigration Lawyer</span><h4>Amsterdam Legal Group</h4><div class="type">Specialist in Dutch Immigration</div><div class="details">Highly Skilled Migrant Visa, EU Blue Card, Startup Visa, 30% ruling.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 IND Netherlands →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in NL</h4><div class="type">Recognized Sponsor Advisor</div><div class="details">Highly Skilled Migrant, Orientation Year visa, Work permit assistance.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Working in NL →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Immigration and Naturalisation Service</h4><div class="type">IND</div><div class="details">Visa applications, residency permits, citizenship, sponsorship.</div><div class="contact-links"><a href="#">📞 088 043 0430</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Expat Centre</span><h4>Expat Centre Netherlands</h4><div class="type">Free Support for Expats</div><div class="details">Free advice on housing, healthcare, taxes, BSN registration.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Sweden -->
+        <div id="sweden" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Swedish Immigration Lawyer</span><h4>Stockholm Migration Law</h4><div class="type">Advokat</div><div class="details">Work permits, EU Blue Card, Permanent residency, citizenship.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Swedish Migration Agency →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Sweden</h4><div class="type">Specialist in Work Permits</div><div class="details">Work permit applications, extension, permanent residency.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Sweden →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Swedish Migration Agency</h4><div class="type">Official Immigration Authority</div><div class="details">Visa applications, work permits, citizenship, EU Blue Card.</div><div class="contact-links"><a href="#">📞 +46 771 135 220</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Sweden Welcome</span><h4>Expat Support Sweden</h4><div class="type">Free Settlement Services</div><div class="details">Free advice on housing, job search, Swedish language courses.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Portugal -->
+        <div id="portugal" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Portuguese Immigration Lawyer</span><h4>Lisbon Legal Partners</h4><div class="type">Advogado</div><div class="details">D7 visa, Digital Nomad visa, Work permits, Golden Visa, citizenship.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 SEF Portugal →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Portugal</h4><div class="type">Specialist in Work Visas</div><div class="details">D3 (Highly Qualified), D1 (Work Visa), Digital Nomad.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Portugal Visas →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>SEF - Immigration Service</h4><div class="type">Official Immigration Authority</div><div class="details">Visa applications, residency permits, appointments, renewals.</div><div class="contact-links"><a href="#">📞 +351 217 115 000</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Expat Centre Portugal</span><h4>Portugal Welcomes</h4><div class="type">Free Support for Immigrants</div><div class="details">Free advice on NIF, NISS, housing, healthcare, integration.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Spain -->
+        <div id="spain" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Spanish Immigration Lawyer</span><h4>Madrid Immigration Legal</h4><div class="type">Abogado de Extranjería</div><div class="details">Work visas, Non-Lucrative Visa, Digital Nomad Visa, Golden Visa.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Spanish Immigration →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Spain</h4><div class="type">Specialist in Work Visas</div><div class="details">Highly Qualified Visa, EU Blue Card, Self-Employment Visa.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Spain Guide →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Ministry of Inclusion</h4><div class="type">Official Immigration</div><div class="details">Visa applications, residency, work permits, citizenship.</div><div class="contact-links"><a href="#">📞 +34 91 273 00 00</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Expat Centre</span><h4>Spain Expat Centre</h4><div class="type">Free Support</div><div class="details">Free NIE registration, Padron, healthcare, and legal advice.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Italy -->
+        <div id="italy" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Italian Immigration Lawyer</span><h4>Rome Legal Partners</h4><div class="type">Avvocato per Immigrazione</div><div class="details">Work visas, EU Blue Card, Self-Employment Visa, citizenship.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Italian Immigration →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Italy</h4><div class="type">Specialist in Work Visas</div><div class="details">Decreto Flussi, work permits, sponsorship, residence permits.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Italy →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Italian Immigration</h4><div class="type">Official Immigration Authority</div><div class="details">Visa applications, residence permits, citizenship, asylum.</div><div class="contact-links"><a href="#">📞 06 432 000</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Migrant Help</span><h4>Migrant Help Italy</h4><div class="type">Free Support</div><div class="details">Free legal advice, housing support, Italian language courses.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Switzerland -->
+        <div id="switzerland" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Swiss Immigration Lawyer</span><h4>Zurich Legal Group</h4><div class="type">Fachanwalt für Ausländerrecht</div><div class="details">L-permit, B-permit, C-permit, work visas for EU/non-EU.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 SEM Switzerland →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Switzerland</h4><div class="type">Specialist in Work Visas</div><div class="details">Work permit applications, sponsorship, residence permits.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Switzerland →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>SEM</h4><div class="type">State Secretariat for Migration</div><div class="details">Visa applications, work permits, residence permits.</div><div class="contact-links"><a href="#">📞 +41 58 465 11 11</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Welcome Centre</span><h4>Swiss Welcome</h4><div class="type">Free Support</div><div class="details">Free advice on housing, taxes, healthcare, and integration.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Norway -->
+        <div id="norway" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Norwegian Immigration Lawyer</span><h4>Oslo Legal Partners</h4><div class="type">Advokatfirma</div><div class="details">Work permits, skilled worker visa, EU/EEA registration, citizenship.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 UDI Norway →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Norway</h4><div class="type">Specialist in Work Visas</div><div class="details">Skilled worker visa, seasonal work, permit extensions.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Norway →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>UDI - Norwegian Directorate</h4><div class="type">Official Immigration Authority</div><div class="details">Visa applications, work permits, residency, citizenship.</div><div class="contact-links"><a href="#">📞 +47 23 35 15 00</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Settlement Agency</span><h4>NAV Norway</h4><div class="type">Free Support Services</div><div class="details">Job search assistance, social benefits, integration programs.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📞 Helpline</a></div></div></div></div>
+
+        <!-- Denmark -->
+        <div id="denmark" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Danish Immigration Lawyer</span><h4>Copenhagen Legal</h4><div class="type">Advokat</div><div class="details">Work permits, Pay Limit Scheme, Positive List, EU registration.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 SIRI Denmark →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Denmark</h4><div class="type">Specialist in Work Visas</div><div class="details">Fast-track scheme, work permit applications, residency.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Denmark →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>SIRI</h4><div class="type">Danish Agency for International Recruitment</div><div class="details">Work permit applications, residency, citizenship.</div><div class="contact-links"><a href="#">📞 +45 72 14 20 00</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Danish Refugee Council</span><h4>DRC</h4><div class="type">Free Support for Migrants</div><div class="details">Free legal advice, integration support, language courses.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Finland -->
+        <div id="finland" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Finnish Immigration Lawyer</span><h4>Helsinki Law</h4><div class="type">Asianajotoimisto</div><div class="details">Work permits, EU Blue Card, specialist visa, citizenship.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Migri Finland →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Finland</h4><div class="type">Specialist in Work Visas</div><div class="details">Residence permit for employed persons, start-up permit.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Finland →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Migri</h4><div class="type">Finnish Immigration Service</div><div class="details">Visa applications, residence permits, citizenship, appeals.</div><div class="contact-links"><a href="#">📞 +358 29 5 66 4000</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Finnish Immigration</span><h4>International House Helsinki</h4><div class="type">Free Support for Expats</div><div class="details">Free advice on housing, job search, social security, Finnish courses.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Belgium -->
+        <div id="belgium" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Belgian Immigration Lawyer</span><h4>Brussels Legal</h4><div class="type">Avocat en Droit des Étrangers</div><div class="details">Work permits, EU Blue Card, single permit, citizenship.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 IBZ Belgium →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Belgium</h4><div class="type">Specialist in Work Visas</div><div class="details">Single permit, highly skilled migrant, EU Blue Card.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Belgium →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>IBZ</h4><div class="type">Official Immigration Office</div><div class="details">Visa applications, residence permits, nationality.</div><div class="contact-links"><a href="#">📞 +32 2 488 60 00</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Expat Centre</span><h4>Belgium Expat</h4><div class="type">Free Support</div><div class="details">Free advice on housing, registration, taxes, integration.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Austria -->
+        <div id="austria" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Austrian Immigration Lawyer</span><h4>Vienna Legal</h4><div class="type">Rechtsanwalt</div><div class="details">Red-White-Red Card, EU Blue Card, work permits, citizenship.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Austrian Immigration →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Austria</h4><div class="type">Specialist in Work Visas</div><div class="details">Red-White-Red Card, skilled worker visa, sponsorship.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Austria →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>AMS</h4><div class="type">Public Employment Service</div><div class="details">Work permits, labor market tests, job seeker support.</div><div class="contact-links"><a href="#">📞 +43 1 217 48 00</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Integration Centre</span><h4>Austrian Integration</h4><div class="type">Free Support</div><div class="details">Free advice on housing, German courses, integration programs.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Japan -->
+        <div id="japan" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Japanese Immigration Lawyer</span><h4>Tokyo Immigration</h4><div class="type">行政書士</div><div class="details">Work visas, Engineer/Specialist in Humanities, Highly Skilled Professional.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 ISA Japan →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Japan</h4><div class="type">Specialist in Work Visas</div><div class="details">COE applications, visa renewals, permanent residency.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Japan →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Immigration Services Agency</h4><div class="type">ISA</div><div class="details">Visa applications, status checks, residence management.</div><div class="contact-links"><a href="#">📞 +81 3 5363 3011</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Expat Support</span><h4>Japan Expat Support</h4><div class="type">Free Settlement Services</div><div class="details">Free advice on housing, healthcare, Japanese classes.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- South Korea -->
+        <div id="southkorea" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Korean Immigration Lawyer</span><h4>Seoul Legal</h4><div class="type">법무법인</div><div class="details">E-series visas (E-7, E-2), F-2 residency, citizenship.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 HIKOREA →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Korea</h4><div class="type">Specialist in Work Visas</div><div class="details">E-7 visa, job seeker visa (D-10), visa extensions.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Korea →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>HIKOREA</h4><div class="type">Immigration & Foreign Policy</div><div class="details">Visa applications, alien registration, citizenship.</div><div class="contact-links"><a href="#">📞 1345</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Global Center</span><h4>Seoul Global Center</h4><div class="type">Free Support</div><div class="details">Free legal consultations, Korean classes, housing support.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Singapore -->
+        <div id="singapore" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Singapore Immigration Lawyer</span><h4>Singapore Legal</h4><div class="type">Law Firm</div><div class="details">Employment Pass, S Pass, EntrePass, PR applications.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 MOM Singapore →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Singapore</h4><div class="type">Specialist in Work Visas</div><div class="details">Employment Pass, S Pass applications, renewals, PR.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Singapore →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Ministry of Manpower</h4><div class="type">MOM</div><div class="details">Work passes, employment regulations, foreign worker management.</div><div class="contact-links"><a href="#">📞 6438 5122</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Expat Centre</span><h4>Singapore Expat Support</h4><div class="type">Free Support</div><div class="details">Free advice on housing, healthcare, integration.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Malaysia -->
+        <div id="malaysia" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Malaysian Immigration Lawyer</span><h4>Kuala Lumpur Legal</h4><div class="type">Law Firm</div><div class="details">Employment Pass, Professional Visit Pass, MM2H, work permits.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Immigration Dept Malaysia →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Malaysia</h4><div class="type">Specialist in Work Visas</div><div class="details">Employment Pass applications, renewals, dependent passes.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Malaysia →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Immigration Department</h4><div class="type">Official Immigration</div><div class="details">Visa applications, passes, permits, enforcement.</div><div class="contact-links"><a href="#">📞 03-8000 8000</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Expat Centre</span><h4>MDEC</h4><div class="type">Free Support</div><div class="details">Digital nomad visa, tech talent support, relocation advice.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Thailand -->
+        <div id="thailand" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Thai Immigration Lawyer</span><h4>Bangkok Legal</h4><div class="type">ทนายความ</div><div class="details">Non-Imm B visa, work permit, SMART visa, LTR visa.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Thai Immigration →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Thailand</h4><div class="type">Specialist in Work Visas</div><div class="details">Work permit applications, visa extensions, BOI companies.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Thailand →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Thai Immigration Bureau</h4><div class="type">Official Immigration</div><div class="details">Visa applications, extensions, 90-day reporting.</div><div class="contact-links"><a href="#">📞 1178</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">BOI Unit</span><h4>BOI Support</h4><div class="type">Free Support</div><div class="details">BOI visa and work permit assistance, relocation advice.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Vietnam -->
+        <div id="vietnam" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Vietnamese Immigration Lawyer</span><h4>Ho Chi Minh Legal</h4><div class="type">Luật sư</div><div class="details">Work permit, business visa, temporary residence card, visa exemption.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Vietnam Immigration →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Vietnam</h4><div class="type">Specialist in Work Visas</div><div class="details">Work permit applications, visa extensions, TRC processing.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Vietnam →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Vietnam Immigration</h4><div class="type">Official Immigration Authority</div><div class="details">Visa applications, work permits, residence cards.</div><div class="contact-links"><a href="#">📞 024 3825 7941</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Visa Support</span><h4>Vietnam Expat Support</h4><div class="type">Free Support</div><div class="details">Free advice on visa procedures, housing, integration.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- UAE -->
+        <div id="uae" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Legal Consultant</span><h4>Dubai Immigration Legal</h4><div class="type">Licensed by Dubai Govt</div><div class="details">Employment visa, Green Visa, Golden Visa, Freelance visa.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 ICP UAE →</a></div></div><div class="contact-card"><span class="badge badge-consultant">PRO Services</span><h4>Emirates Visa Center</h4><div class="type">Government Approved</div><div class="details">Employment visa processing, medical, biometrics, Emirates ID.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 MOHRE UAE →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>ICP - Federal Authority</h4><div class="type">Official Immigration</div><div class="details">Visa status, residency permits, entry permits, online services.</div><div class="contact-links"><a href="#">📞 600 522 222</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Expat Support</span><h4>Dubai Care Centre</h4><div class="type">Free Legal Advice</div><div class="details">Free legal advice for domestic workers and low-income expats.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Saudi Arabia -->
+        <div id="saudiarabia" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Saudi Immigration Lawyer</span><h4>Riyadh Legal</h4><div class="type">محامي</div><div class="details">Work visa, Iqama, Premium Residency, business visa.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 MOI Saudi →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Saudi</h4><div class="type">Specialist in Work Visas</div><div class="details">Work visa processing, Iqama renewal, sponsorship transfer.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Saudi →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Ministry of Interior</h4><div class="type">MOI</div><div class="details">Visa services, residency, border control, passport services.</div><div class="contact-links"><a href="#">📞 992</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Expat Centre</span><h4>Saudi Expat</h4><div class="type">Free Support</div><div class="details">Free advice on Iqama, housing, healthcare, legal rights.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Qatar -->
+        <div id="qatar" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Qatari Immigration Lawyer</span><h4>Doha Legal</h4><div class="type">Law Firm</div><div class="details">Work visa, QID, residency, family sponsorship, business setup.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 MOI Qatar →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Qatar</h4><div class="type">Specialist in Work Visas</div><div class="details">Work visa processing, QID application, sponsor change.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Qatar →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Ministry of Interior</h4><div class="type">MOI Qatar</div><div class="details">Visa applications, residency, border control, QID services.</div><div class="contact-links"><a href="#">📞 2342000</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Expat Centre</span><h4>Qatar Expat</h4><div class="type">Free Support</div><div class="details">Free advice on housing, healthcare, legal rights, integration.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- New Zealand -->
+        <div id="nz" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Licensed Adviser</span><h4>NZ Immigration Help</h4><div class="type">IAA Licensed</div><div class="details">Accredited Employer Work Visa, Skilled Migrant Category.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Immigration NZ →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Migration Consultant</span><h4>Work in NZ</h4><div class="type">Specialist in Work Visas</div><div class="details">AEWV sponsorship, job search assistance, visa application support.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 AEWV Details →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Immigration New Zealand</h4><div class="type">Official Contact Centre</div><div class="details">Visa inquiries, application status, free immigration information.</div><div class="contact-links"><a href="#">📞 +64 9 914 4100</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">CAB New Zealand</span><h4>Citizens Advice Bureau</h4><div class="type">Free Advice</div><div class="details">Free legal advice on visas, employment rights, housing, settlement.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📞 0800 367 222</a></div></div></div></div>
+
+        <!-- Ireland -->
+        <div id="ireland" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Immigration Solicitor</span><h4>Irish Visa Centre</h4><div class="type">Law Society Member</div><div class="details">General Employment Permit, Critical Skills Permit, Stamp 1/4.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 ISD Ireland →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Ireland</h4><div class="type">Employment Permit Specialists</div><div class="details">Critical Skills Employment Permit, General Employment Permit.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work Permits Ireland →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Irish Naturalisation & Immigration</h4><div class="type">Official Support</div><div class="details">Visa applications, registration, citizenship, immigration info.</div><div class="contact-links"><a href="#">📞 +353 1 616 2000</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Crosscare Migrant Project</span><h4>Free Legal Advice</h4><div class="type">Charity Organisation</div><div class="details">Free immigration legal advice for vulnerable migrants.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📞 +353 1 873 7311</a></div></div></div></div>
+
+        <!-- Brazil -->
+        <div id="brazil" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Brazilian Immigration Lawyer</span><h4>Sao Paulo Legal</h4><div class="type">Advogado</div><div class="details">Work visa, residency, digital nomad visa, citizenship, Mercosur.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Ministry of Justice →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Brazil</h4><div class="type">Specialist in Work Visas</div><div class="details">VITEM V, Digital Nomad Visa, residency applications.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Brazil →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>Federal Police</h4><div class="type">Official Immigration</div><div class="details">Visa applications, residency registration, RNE/CRNM.</div><div class="contact-links"><a href="#">📞 0300 344 8000</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Expat Centre</span><h4>Brazil Expat</h4><div class="type">Free Support</div><div class="details">Free advice on CPF, housing, healthcare, Portuguese courses.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Mexico -->
+        <div id="mexico" class="country-content"><div class="contacts-grid"><div class="contact-card"><span class="badge badge-lawyer">Mexican Immigration Lawyer</span><h4>Mexico City Legal</h4><div class="type">Abogado</div><div class="details">Temporary Resident Visa, Permanent Resident Visa, work permit.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 INM Mexico →</a></div></div><div class="contact-card"><span class="badge badge-consultant">Immigration Consultant</span><h4>Work in Mexico</h4><div class="type">Specialist in Work Visas</div><div class="details">Resident Visa for work, visa renewals, permanent residency.</div><div class="contact-links"><a href="#">📱 WhatsApp</a><a href="#">📧 Email</a></div><div class="official-link"><a href="#">🔗 Work in Mexico →</a></div></div><div class="contact-card"><span class="badge badge-official">Government</span><h4>National Immigration Institute</h4><div class="type">INM</div><div class="details">Visa applications, residence cards, immigration procedures.</div><div class="contact-links"><a href="#">📞 800 004 6200</a><a href="#">🌐 Website</a></div></div><div class="contact-card"><span class="badge badge-agency">Expat Centre</span><h4>Mexico Expat</h4><div class="type">Free Support</div><div class="details">Free advice on RFC, housing, healthcare, Spanish courses.</div><div class="contact-links"><a href="#">🌐 Website</a><a href="#">📧 Email</a></div></div></div></div>
+
+        <!-- Additional Resources Banner -->
+        <div class="resource-banner">
+            <h3>✨ Need Personalized Immigration Help?</h3>
+            <p>Our team can connect you with the right immigration professional based on your specific situation.</p>
+            <div class="resource-buttons">
+                <a href="contact.html" class="btn-primary">Contact Our Team →</a>
+                <a href="https://wa.me/231760766221?text=Hi%2C%20I%20need%20immigration%20help%20for%20working%20abroad" target="_blank" class="btn-outline"> WhatsApp Us</a>
+            </div>
+        </div>
+    </div>
+
+     <!-- Modern Footer -->
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Passage</h4>
+                    <p>Your trusted passage to working abroad. We connect job seekers directly with verified employers worldwide. No middlemen, no hidden fees.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/passage" target="_blank" class="social-icon" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/passage" target="_blank" class="social-icon" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/passage" target="_blank" class="social-icon" aria-label="X (Twitter)">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="jobs.html">Browse Jobs</a></li>
+                        <li><a href="visa.html">Visa Guide</a></li>
+                        <li><a href="routes.html">Immigration Routes</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Popular Destinations</h4>
+                    <ul>
+                        <li><a href="jobs.html">Canada Jobs</a></li>
+                        <li><a href="jobs.html">Germany Jobs</a></li>
+                        <li><a href="jobs.html">Australia Jobs</a></li>
+                        <li><a href="jobs.html">UK Jobs</a></li>
+                        <li><a href="jobs.html">UAE Jobs</a></li>
+                        <li><a href="jobs.html">USA Jobs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Get new job alerts and visa updates straight to your inbox.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                        <button type="submit" class="newsletter-btn">Subscribe →</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-links">
+                    <a href="Privacy_Policy.html">Privacy Policy</a>
+                    <a href="Terms_of_Service.html">Terms of Service</a>
+                    <a href="Cookie_Policy.html">Cookie Policy</a>
+                    <a href="Accessibility.html">Accessibility</a>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="https://scholarshiphubinc.netlify.app/" target="_blank" class="scholarship-button" rel="noopener noreferrer">
+                        <span></span>
+                        <span>Scholarship Hub Inc.</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--border);">
+                <p>© 2025 Passage - Direct to Employers. Work Abroad.</p>
+                <p style="margin-top: 6px; font-size: 0.7rem; color: var(--gray);">We are not a law firm. For legal advice, consult a registered immigration lawyer.</p>
+                <p style="margin-top: 6px; font-size: 0.7rem;">WhatsApp us: <a href="https://wa.me/231760766221" style="color: var(--gold);">+231 76 076 6221</a> | Email: scholarshiphub231@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile dropdown menu functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        
+        if (menuToggle && dropdownMenu) {
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const expanded = menuToggle.getAttribute('aria-expanded') === 'true' ? false : true;
+                dropdownMenu.classList.toggle('show');
+                menuToggle.setAttribute('aria-expanded', expanded);
+                
+                const spans = menuToggle.querySelectorAll('span');
+                if (dropdownMenu.classList.contains('show')) {
+                    spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target) && dropdownMenu.classList.contains('show')) {
+                    dropdownMenu.classList.remove('show');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    const spans = menuToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+            
+            const dropdownLinks = dropdownMenu.querySelectorAll('a');
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    dropdownMenu.classList.remove('show');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    const spans = menuToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                });
+            });
+        }
+
+        // Tab switching for immigration contacts
+        const tabs = document.querySelectorAll('.country-tab');
+        const contents = document.querySelectorAll('.country-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const country = tab.getAttribute('data-country');
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                contents.forEach(content => content.classList.remove('active-country'));
+                document.getElementById(country).classList.add('active-country');
+            });
+        });
+
+        // Newsletter subscription
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value.trim();
+                if (email && email.includes('@')) {
+                    alert(`Thank you for subscribing! We'll send updates to ${email}`);
+                    this.reset();
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

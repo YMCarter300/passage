@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Passage | Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --black-light: #1a1a1a;
+            --black-medium: #0d0d0d;
+            --white: #ffffff;
+            --gold: #d4af37;
+            --gold-dark: #b8960c;
+            --gold-light: #f4e4bc;
+            --gray: #888888;
+            --border: #333333;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== DROPDOWN NAVIGATION (Mobile & Tablet Optimized) ========== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.85);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gold), var(--white), var(--gold));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Desktop nav links (hidden on mobile) */
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--white));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hamburger button (mobile only) */
+        .menu-toggle {
+            display: none;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 10px 14px;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .menu-toggle span {
+            width: 26px;
+            height: 2px;
+            background-color: var(--gold);
+            display: block;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .menu-toggle:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: var(--gold);
+        }
+
+        /* Dropdown menu for mobile */
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(12px);
+            width: 100%;
+            padding: 20px 20px 24px;
+            border-radius: 0 0 24px 24px;
+            border-bottom: 1px solid var(--border);
+            gap: 18px;
+            position: absolute;
+            top: 78px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        .dropdown-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.2s;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            color: var(--gold);
+            padding-left: 8px;
+            background: linear-gradient(90deg, rgba(212,175,55,0.1), transparent);
+        }
+
+        .dropdown-menu.show {
+            display: flex;
+        }
+
+        /* Policy Header Styles */
+        .policy-header {
+            margin: 40px 0 28px 0;
+            position: relative;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            gap: 12px;
+            color: var(--gold-light);
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--white), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 12px;
+            word-break: break-word;
+        }
+
+        .last-updated {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        /* Policy Content - fully responsive */
+        .policy-content {
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(13, 13, 13, 0.7));
+            backdrop-filter: blur(4px);
+            border-radius: 28px;
+            padding: 32px 24px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .policy-content h2 {
+            font-size: 1.6rem;
+            text-align: left;
+            margin: 32px 0 16px 0;
+            background: linear-gradient(135deg, var(--white), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .policy-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .policy-content p {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .policy-content ul {
+            margin: 16px 0 24px 20px;
+        }
+
+        .policy-content li {
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .policy-content li strong {
+            color: var(--gold);
+        }
+
+        .policy-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(212, 175, 55, 0.4);
+            transition: all 0.2s;
+            word-break: break-word;
+        }
+
+        .policy-content a:hover {
+            color: var(--gold-light);
+            border-bottom-color: var(--gold);
+        }
+
+        /* Modern Footer Styles */
+        .modern-footer {
+            background: linear-gradient(135deg, var(--black-medium), #0a0a0a);
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+            padding: 48px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 36px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+        }
+
+        .footer-section p {
+            color: var(--gray);
+            line-height: 1.6;
+            font-size: 0.85rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 14px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            background: var(--gold);
+        }
+
+        .social-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--white);
+        }
+
+        .social-icon:hover svg {
+            fill: var(--black);
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .newsletter-input {
+            padding: 10px 14px;
+            background: var(--black);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            color: var(--white);
+            font-size: 0.85rem;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .newsletter-btn {
+            background: var(--gold);
+            color: var(--black);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .newsletter-btn:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border);
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .footer-bottom-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Scholarship Hub button */
+        .scholarship-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+            padding: 7px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--gold);
+            backdrop-filter: blur(4px);
+            white-space: nowrap;
+        }
+
+        .scholarship-button:hover {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom-right {
+            display: flex;
+            align-items: center;
+        }
+
+        /* ========== RESPONSIVE PHONE OPTIMIZATION ========== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 18px;
+            }
+            
+            h1 {
+                font-size: 1.9rem;
+                line-height: 1.2;
+            }
+            
+            .policy-content {
+                padding: 24px 18px;
+                border-radius: 24px;
+            }
+            
+            .policy-content h2 {
+                font-size: 1.4rem;
+                margin-top: 28px;
+            }
+            
+            .policy-content p, .policy-content li {
+                font-size: 0.95rem;
+            }
+            
+            /* Hide regular nav-links on mobile, show hamburger */
+            .nav-links {
+                display: none;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .navbar {
+                padding: 14px 0;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+            }
+            
+            .footer-bottom-links {
+                justify-content: center;
+            }
+            
+            .footer-bottom-right {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .scholarship-button {
+                white-space: normal;
+                text-align: center;
+                padding: 7px 16px;
+                font-size: 0.75rem;
+            }
+            
+            .footer-content {
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .newsletter-form {
+                max-width: 260px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .policy-content {
+                padding: 20px 16px;
+            }
+            
+            .back-link {
+                font-size: 0.85rem;
+            }
+            
+            .dropdown-menu a {
+                font-size: 1rem;
+                padding: 8px 0;
+            }
+            
+            .dropdown-menu {
+                top: 72px;
+                padding: 16px;
+            }
+        }
+        
+        /* Focus ring accessibility */
+        :focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+        
+        button:focus-visible, a:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation with Dropdown for Mobile -->
+        <nav class="navbar">
+            <div class="logo"><a href="index.html">PASSAGE SHI.</a></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="jobs.html">Jobs</a>
+                <a href="visa.html">Visa Guide</a>
+                <a href="routes.html">Immigration</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <!-- Hamburger Toggle Button (mobile) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        
+        <!-- Dropdown Menu (Mobile) -->
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="visa.html">Visa Guide</a>
+            <a href="routes.html">Immigration</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="policy-header">
+            <a href="public-policy.html" class="back-link">← Back to Public Policy</a>
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: April 10, 2026</p>
+        </div>
+
+        <div class="policy-content">
+            <h2>1. Information We Collect</h2>
+            <p>Passage collects personal information that you voluntarily provide to us when you use our services, including when you create an account, apply for jobs, or contact our support team. We are committed to transparency about the data we collect and how it is used.</p>
+            <ul>
+                <li><strong>Contact Information:</strong> Name, email address, phone number, and mailing address to facilitate employer communications.</li>
+                <li><strong>Professional Information:</strong> Work experience, skills, qualifications, employment history, and educational background.</li>
+                <li><strong>Application Data:</strong> Job applications, resumes, cover letters, portfolio links, and communication with employers.</li>
+                <li><strong>Technical Information:</strong> IP address, browser type, device information, referring URLs, and usage data collected via cookies.</li>
+                <li><strong>Verification Data:</strong> Identity verification documents when required for specific visa categories or employer requirements.</li>
+            </ul>
+
+            <h2>2. How We Use Your Information</h2>
+            <p>We use the information we collect to provide, maintain, and improve our services. Our primary goals are connecting talent with global opportunities and ensuring a secure, personalized experience.</p>
+            <ul>
+                <li>Connect you with potential employers and relevant job opportunities based on your profile.</li>
+                <li>Process and manage your job applications, including status updates and interview scheduling.</li>
+                <li>Communicate with you about job matches, application status, visa updates, and service announcements.</li>
+                <li>Improve and personalize your experience on our platform through content recommendations.</li>
+                <li>Comply with legal obligations, prevent fraud, and enforce our terms of service.</li>
+                <li>Analyze usage trends to enhance platform performance and user experience.</li>
+            </ul>
+
+            <h2>3. Legal Basis for Processing (GDPR & CCPA Compliance)</h2>
+            <p>For users in the European Economic Area (EEA) or California, we process your personal data under the following legal bases: your consent, contract performance (to provide our services), legal obligations, and legitimate interests (improving our platform). You have the right to withdraw consent at any time.</p>
+
+            <h2>4. Information Sharing & Disclosure</h2>
+            <p>We do not sell your personal information. We only share your data in the following circumstances, always with appropriate safeguards:</p>
+            <ul>
+                <li><strong>Employers and Recruitment Partners:</strong> When you apply for a job, your application data is shared with the respective employer or hiring partner.</li>
+                <li><strong>Service Providers:</strong> Third-party vendors who assist with hosting, analytics, customer support, email delivery, and security monitoring.</li>
+                <li><strong>Legal Authorities:</strong> When required by law, court order, or to protect the rights, property, or safety of Passage, our users, or others.</li>
+                <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets, we will notify you of any change in control.</li>
+            </ul>
+
+            <h2>5. Data Security & Retention</h2>
+            <p>We implement appropriate technical and organizational measures including encryption, access controls, and regular security audits to protect your personal information against unauthorized access, alteration, disclosure, or destruction. We retain your data only as long as necessary to provide our services or as required by law (typically up to 5 years after last activity, unless you request deletion).</p>
+
+            <h2>6. Your Privacy Rights</h2>
+            <p>Depending on your location (including GDPR for EEA residents and CCPA for California residents), you may have the following rights:</p>
+            <ul>
+                <li><strong>Access:</strong> Request a copy of your personal data we hold.</li>
+                <li><strong>Correction:</strong> Correct inaccurate or incomplete information.</li>
+                <li><strong>Deletion:</strong> Request deletion of your personal data (subject to legal exceptions).</li>
+                <li><strong>Object/Restrict:</strong> Object to or restrict certain processing activities, including direct marketing.</li>
+                <li><strong>Portability:</strong> Receive your data in a structured, machine-readable format.</li>
+                <li><strong>Withdraw Consent:</strong> Withdraw consent at any time where processing is based on consent.</li>
+            </ul>
+            <p>To exercise these rights, please contact us at <a href="mailto:scholarshiphub231@gmail.com">scholarshiphub231@gmail.com</a>. We will respond within 30 days. You also have the right to lodge a complaint with your local data protection authority.</p>
+
+            <h2>7. Cookies and Tracking Technologies</h2>
+            <p>We use cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, and personalize content. Essential cookies are necessary for core functionality. For detailed information about our cookie use, including how to manage preferences, please see our <a href="Cookie_Policy.html">Cookie Policy</a>.</p>
+
+            <h2>8. International Data Transfers</h2>
+            <p>As a global platform connecting job seekers with employers worldwide, your information may be transferred to and processed in countries outside your residence, including the United States, Canada, Germany, Australia, and the UAE. We ensure appropriate safeguards such as Standard Contractual Clauses (SCCs) are in place for such transfers to protect your data in accordance with applicable law.</p>
+
+            <h2>9. Children's Privacy</h2>
+            <p>Our services are not directed to individuals under 16 years of age. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us immediately so we can delete it.</p>
+
+            <h2>10. Third-Party Links</h2>
+            <p>Our website may contain links to third-party websites (employer sites, visa authorities, etc.). We are not responsible for the privacy practices or content of these external sites. We encourage you to read their privacy policies.</p>
+
+            <h2>11. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or industry standards. We will notify you of any material changes by posting the new policy on this page with an updated "Last Updated" date. For significant changes, we may also provide email notice.</p>
+
+            <h2>12. Contact Us</h2>
+            <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact our Privacy Team:</p>
+            <ul>
+                <li>Email: <a href="mailto:scholarshiphub231@gmail.com">scholarshiphub231@gmail.com</a> (Privacy Officer)</li>
+                <li>WhatsApp: <a href="https://wa.me/0760766122">+231 76 076 6122</a></li>
+                <li>Phone (Privacy Inquiries): +231 76 076 6122</li>
+                <li>Mail: Passage Global, Attn: Privacy Office, Tubman Boulevard, Sinkor, Monrovia, Liberia 1000</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modern Footer -->
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Passage</h4>
+                    <p>Your trusted passage to working abroad. We connect job seekers directly with verified employers worldwide. No middlemen, no hidden fees.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/passage" target="_blank" class="social-icon" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/passage" target="_blank" class="social-icon" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/passage" target="_blank" class="social-icon" aria-label="X (Twitter)">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="jobs.html">Browse Jobs</a></li>
+                        <li><a href="visa.html">Visa Guide</a></li>
+                        <li><a href="routes.html">Immigration Routes</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Popular Destinations</h4>
+                    <ul>
+                        <li><a href="jobs.html">Canada Jobs</a></li>
+                        <li><a href="jobs.html">Germany Jobs</a></li>
+                        <li><a href="jobs.html">Australia Jobs</a></li>
+                        <li><a href="jobs.html">UK Jobs</a></li>
+                        <li><a href="jobs.html">UAE Jobs</a></li>
+                        <li><a href="jobs.html">USA Jobs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email for newsletter">
+                        <button type="submit" class="newsletter-btn">Subscribe →</button>
+                    </form>
+                    <p style="margin-top: 16px; font-size: 0.8rem;">Get latest jobs and visa updates.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-links">
+                    <a href="Privacy_Policy.html">Privacy Policy</a>
+                    <a href="Terms_of_Service.html">Terms of Service</a>
+                    <a href="Cookie_Policy.html">Cookie Policy</a>
+                    <a href="Accessibility.html">Accessibility</a>
+                </div>
+                
+                <div class="footer-bottom-right">
+                    <a href="https://scholarshiphubinc.netlify.app/" target="_blank" class="scholarship-button" rel="noopener noreferrer">
+                        <span></span>
+                        <span>Scholarship Hub Inc.</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--border);">
+                <p>© 2025 Passage - Direct to Employers. Work Abroad.</p>
+                <p style="margin-top: 6px; font-size: 0.7rem; color: var(--gray);">We are not a law firm. For legal advice, consult a registered immigration lawyer.</p>
+                <p style="margin-top: 6px; font-size: 0.7rem;">WhatsApp us: <a href="https://wa.me/231760766221" style="color: var(--gold);">+231 76 076 6221</a> | Email: scholarshiphub231@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile dropdown menu functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        
+        if (menuToggle && dropdownMenu) {
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const expanded = menuToggle.getAttribute('aria-expanded') === 'true' ? false : true;
+                dropdownMenu.classList.toggle('show');
+                menuToggle.setAttribute('aria-expanded', expanded);
+                
+                const spans = menuToggle.querySelectorAll('span');
+                if (dropdownMenu.classList.contains('show')) {
+                    spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    if (dropdownMenu.classList.contains('show')) {
+                        dropdownMenu.classList.remove('show');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        const spans = menuToggle.querySelectorAll('span');
+                        spans[0].style.transform = 'none';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'none';
+                    }
+                }
+            });
+            
+            const dropdownLinks = dropdownMenu.querySelectorAll('a');
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    dropdownMenu.classList.remove('show');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    const spans = menuToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                });
+            });
+        }
+
+        // Newsletter subscription handler
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                const email = emailInput.value.trim();
+                if (email && email.includes('@') && email.includes('.')) {
+                    alert(`Thank you for subscribing! We'll send career updates to ${email}`);
+                    emailInput.value = '';
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#') {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
