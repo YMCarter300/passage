@@ -327,6 +327,28 @@
             margin-top: 12px;
         }
 
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            margin-top: 12px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
         .footer-note {
             background: linear-gradient(135deg, rgba(34, 197, 94, 0.05), rgba(212, 175, 55, 0.05));
             border-radius: 16px;
@@ -354,7 +376,7 @@
             color: var(--gray);
         }
 
-        /* Modern Footer Styles */
+         /* Modern Footer */
         .modern-footer {
             background: linear-gradient(135deg, var(--black-medium), #0a0a0a);
             border-top: 1px solid var(--border);
@@ -434,7 +456,6 @@
             fill: var(--black);
         }
 
-        /* Newsletter Form Styles - FIXED */
         .newsletter-form {
             display: flex;
             flex-direction: column;
@@ -448,16 +469,11 @@
             border-radius: 30px;
             color: var(--white);
             font-size: 0.85rem;
-            width: 100%;
         }
 
         .newsletter-input:focus {
             outline: none;
             border-color: var(--gold);
-        }
-
-        .newsletter-input::placeholder {
-            color: var(--gray);
         }
 
         .newsletter-btn {
@@ -515,10 +531,13 @@
             border-radius: 40px;
             font-weight: 600;
             font-size: 0.8rem;
+            letter-spacing: 0.3px;
             border: 1px solid rgba(212, 175, 55, 0.5);
             transition: all 0.3s ease;
             text-decoration: none;
             color: var(--gold);
+            backdrop-filter: blur(4px);
+            white-space: nowrap;
         }
 
         .scholarship-button:hover {
@@ -528,23 +547,67 @@
             transform: translateY(-2px);
         }
 
+        .footer-bottom-right {
+            display: flex;
+            align-items: center;
+        }
+
+        /* ========== RESPONSIVE PHONE OPTIMIZATION ========== */
         @media (max-width: 768px) {
             .container {
                 padding: 0 18px;
             }
             
-            h1 {
-                font-size: 1.8rem;
+            h2 {
+                font-size: 1.6rem;
+                margin-top: 24px;
             }
             
-            .region-title {
+            .subtitle {
+                font-size: 0.85rem;
+            }
+            
+            .trust-message {
+                padding: 12px 16px;
+                margin: 15px 0 25px;
+            }
+            
+            .trust-message p {
+                font-size: 0.8rem;
+            }
+            
+            .continent-title {
                 font-size: 1.4rem;
             }
             
-            .firms-grid {
+            .jobs-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
             
+            .job-card {
+                padding: 18px;
+            }
+            
+            .job-title {
+                font-size: 1.1rem;
+            }
+            
+            .job-meta {
+                font-size: 0.75rem;
+                gap: 10px;
+            }
+            
+            .stats-bar {
+                gap: 20px;
+                padding: 12px;
+            }
+            
+            .stat-number {
+                font-size: 1.1rem;
+            }
+            
+            /* Hide desktop nav, show hamburger */
             .nav-links {
                 display: none;
             }
@@ -553,13 +616,35 @@
                 display: flex;
             }
             
+            .navbar {
+                padding: 14px 0;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
+                gap: 16px;
             }
             
             .footer-bottom-links {
                 justify-content: center;
+            }
+            
+            .footer-bottom-right {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .scholarship-button {
+                white-space: normal;
+                text-align: center;
+                padding: 7px 16px;
+                font-size: 0.75rem;
             }
             
             .footer-content {
@@ -578,16 +663,16 @@
         }
         
         @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5rem;
+            h2 {
+                font-size: 1.4rem;
             }
             
-            .region-title {
+            .continent-title {
                 font-size: 1.2rem;
             }
             
-            .firm-card {
-                padding: 16px;
+            .job-card {
+                padding: 15px;
             }
             
             .dropdown-menu a {
@@ -599,8 +684,14 @@
                 top: 72px;
                 padding: 16px;
             }
+            
+            .apply-wa {
+                padding: 7px 14px;
+                font-size: 0.75rem;
+            }
         }
         
+        /* Focus ring accessibility */
         :focus-visible {
             outline: 2px solid var(--gold);
             outline-offset: 3px;
@@ -954,7 +1045,7 @@
 
     </div>
 
-    <!-- Modern Footer - FIXED -->
+       <!-- Modern Footer -->
     <footer class="modern-footer">
         <div class="container">
             <div class="footer-content">
@@ -967,49 +1058,15 @@
                         <a href="#" class="social-icon" aria-label="X"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231z"/></svg></a>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="jobs.html">Jobs</a></li>
-                        <li><a href="visa.html">Visa Guide</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Visa Sponsorship Guide</a></li>
-                        <li><a href="#">Country Requirements</a></li>
-                        <li><a href="#">Scam Alerts</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Thank you for subscribing!'); this.reset();">
-                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
-                        <button type="submit" class="newsletter-btn">Subscribe →</button>
-                    </form>
-                </div>
+                <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="jobs.html">Browse Jobs</a></li><li><a href="visa.html">Visa Guide</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+                <div class="footer-section"><h4>Popular Destinations</h4><ul><li><a href="#">Canada Jobs</a></li><li><a href="#">Germany Jobs</a></li><li><a href="#">Australia Jobs</a></li><li><a href="#">UK Jobs</a></li></ul></div>
+                <div class="footer-section"><h4>Newsletter</h4><form class="newsletter-form" id="newsletterForm"><input type="email" class="newsletter-input" placeholder="Your email address" required><button type="submit" class="newsletter-btn">Subscribe →</button></form></div>
             </div>
             <div class="footer-bottom">
-                <div class="footer-bottom-links">
-                    <a href="Privacy_Policy.html">Privacy Policy</a>
-                    <a href="Terms_of_Service.html">Terms of Service</a>
-                    <a href="Cookie_Policy.html">Cookie Policy</a>
-                    <a href="Accessibility.html">Accessibility</a>
-                </div>
-                <div class="footer-bottom-right">
-                    <a href="https://scholarshiphubinc.netlify.app/" target="_blank" class="scholarship-button" rel="noopener noreferrer">
-                        <span>🏆</span><span>Scholarship Hub Inc.</span><span>→</span>
-                    </a>
-                </div>
+                <div class="footer-bottom-links"><a href="Privacy_Policy.html">Privacy Policy</a><a href="Terms_of_Service.html">Terms of Service</a><a href="Cookie_Policy.html">Cookie Policy</a><a href="Accessibility.html">Accessibility</a></div>
+                <div class="footer-bottom-right"><a href="https://scholarshiphubinc.netlify.app/" target="_blank" class="scholarship-button" rel="noopener noreferrer"><span>🏆</span><span>Scholarship Hub Inc.</span><span>→</span></a></div>
             </div>
-            <div style="text-align: center; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--border);">
-                <p>© 2025 Passage - Direct to Employers. Work Abroad.</p>
-                <p style="margin-top: 6px; font-size: 0.7rem;">WhatsApp: <a href="https://wa.me/231760766221" style="color: var(--gold);">+231 76 076 6221</a> | Email: scholarshiphub231@gmail.com</p>
-            </div>
+            <div style="text-align: center; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--border);"><p>© 2025 Passage - Direct to Employers. Work Abroad.</p><p style="margin-top: 6px; font-size: 0.7rem;">WhatsApp: <a href="https://wa.me/231760766221" style="color: var(--gold);">+231 76 076 6221</a> | Email: scholarshiphub231@gmail.com</p></div>
         </div>
     </footer>
 
@@ -1058,6 +1115,21 @@
                     spans[1].style.opacity = '1';
                     spans[2].style.transform = 'none';
                 });
+            });
+        }
+
+        // Newsletter subscription
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value.trim();
+                if (email && email.includes('@')) {
+                    alert(`Thank you for subscribing! We'll send updates to ${email}`);
+                    this.reset();
+                } else {
+                    alert('Please enter a valid email address.');
+                }
             });
         }
     </script>
