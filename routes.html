@@ -327,28 +327,6 @@
             margin-top: 12px;
         }
 
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #25D366;
-            color: white;
-            padding: 8px 18px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.8rem;
-            transition: all 0.3s ease;
-            margin-top: 12px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            background: #128C7E;
-            transform: translateY(-2px);
-        }
-
         .footer-note {
             background: linear-gradient(135deg, rgba(34, 197, 94, 0.05), rgba(212, 175, 55, 0.05));
             border-radius: 16px;
@@ -376,7 +354,7 @@
             color: var(--gray);
         }
 
-         /* Modern Footer */
+        /* Modern Footer */
         .modern-footer {
             background: linear-gradient(135deg, var(--black-medium), #0a0a0a);
             border-top: 1px solid var(--border);
@@ -447,8 +425,8 @@
         }
 
         .social-icon svg {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             fill: var(--white);
         }
 
@@ -552,62 +530,23 @@
             align-items: center;
         }
 
-        /* ========== RESPONSIVE PHONE OPTIMIZATION ========== */
         @media (max-width: 768px) {
             .container {
                 padding: 0 18px;
             }
             
-            h2 {
-                font-size: 1.6rem;
-                margin-top: 24px;
+            h1 {
+                font-size: 1.8rem;
             }
             
-            .subtitle {
-                font-size: 0.85rem;
-            }
-            
-            .trust-message {
-                padding: 12px 16px;
-                margin: 15px 0 25px;
-            }
-            
-            .trust-message p {
-                font-size: 0.8rem;
-            }
-            
-            .continent-title {
+            .region-title {
                 font-size: 1.4rem;
             }
             
-            .jobs-grid {
+            .firms-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
             
-            .job-card {
-                padding: 18px;
-            }
-            
-            .job-title {
-                font-size: 1.1rem;
-            }
-            
-            .job-meta {
-                font-size: 0.75rem;
-                gap: 10px;
-            }
-            
-            .stats-bar {
-                gap: 20px;
-                padding: 12px;
-            }
-            
-            .stat-number {
-                font-size: 1.1rem;
-            }
-            
-            /* Hide desktop nav, show hamburger */
             .nav-links {
                 display: none;
             }
@@ -663,16 +602,16 @@
         }
         
         @media (max-width: 480px) {
-            h2 {
-                font-size: 1.4rem;
+            h1 {
+                font-size: 1.5rem;
             }
             
-            .continent-title {
+            .region-title {
                 font-size: 1.2rem;
             }
             
-            .job-card {
-                padding: 15px;
+            .firm-card {
+                padding: 16px;
             }
             
             .dropdown-menu a {
@@ -684,14 +623,8 @@
                 top: 72px;
                 padding: 16px;
             }
-            
-            .apply-wa {
-                padding: 7px 14px;
-                font-size: 0.75rem;
-            }
         }
         
-        /* Focus ring accessibility */
         :focus-visible {
             outline: 2px solid var(--gold);
             outline-offset: 3px;
@@ -1045,7 +978,7 @@
 
     </div>
 
-       <!-- Modern Footer -->
+    <!-- Modern Footer - FIXED ICONS -->
     <footer class="modern-footer">
         <div class="container">
             <div class="footer-content">
@@ -1053,20 +986,75 @@
                     <h4>Passage</h4>
                     <p>Your trusted passage to working abroad. We connect job seekers directly with verified employers worldwide. No middlemen, no hidden fees.</p>
                     <div class="social-links">
-                        <a href="#" class="social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
-                        <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162z"/></svg></a>
-                        <a href="#" class="social-icon" aria-label="X"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231z"/></svg></a>
+                        <!-- Facebook Icon -->
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+                            </svg>
+                        </a>
+                        <!-- Instagram Icon -->
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162z"/>
+                            </svg>
+                        </a>
+                        <!-- X (Twitter) Icon -->
+                        <a href="#" class="social-icon" aria-label="X">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231l5.451-6.231z"/>
+                            </svg>
+                        </a>
+                        <!-- LinkedIn Icon -->
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C0.792 0 0 0.774 0 1.729v20.542C0 23.227 0.792 24 1.771 24h20.451c0.979 0 1.771-0.773 1.771-1.729V1.729C24 0.774 23.204 0 22.225 0z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="jobs.html">Browse Jobs</a></li><li><a href="visa.html">Visa Guide</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
-                <div class="footer-section"><h4>Popular Destinations</h4><ul><li><a href="#">Canada Jobs</a></li><li><a href="#">Germany Jobs</a></li><li><a href="#">Australia Jobs</a></li><li><a href="#">UK Jobs</a></li></ul></div>
-                <div class="footer-section"><h4>Newsletter</h4><form class="newsletter-form" id="newsletterForm"><input type="email" class="newsletter-input" placeholder="Your email address" required><button type="submit" class="newsletter-btn">Subscribe →</button></form></div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="jobs.html">Browse Jobs</a></li>
+                        <li><a href="visa.html">Visa Guide</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Popular Destinations</h4>
+                    <ul>
+                        <li><a href="#">Canada Jobs</a></li>
+                        <li><a href="#">Germany Jobs</a></li>
+                        <li><a href="#">Australia Jobs</a></li>
+                        <li><a href="#">UK Jobs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                        <button type="submit" class="newsletter-btn">Subscribe →</button>
+                    </form>
+                </div>
             </div>
             <div class="footer-bottom">
-                <div class="footer-bottom-links"><a href="Privacy_Policy.html">Privacy Policy</a><a href="Terms_of_Service.html">Terms of Service</a><a href="Cookie_Policy.html">Cookie Policy</a><a href="Accessibility.html">Accessibility</a></div>
-                <div class="footer-bottom-right"><a href="https://scholarshiphubinc.netlify.app/" target="_blank" class="scholarship-button" rel="noopener noreferrer"><span>🏆</span><span>Scholarship Hub Inc.</span><span>→</span></a></div>
+                <div class="footer-bottom-links">
+                    <a href="Privacy_Policy.html">Privacy Policy</a>
+                    <a href="Terms_of_Service.html">Terms of Service</a>
+                    <a href="Cookie_Policy.html">Cookie Policy</a>
+                    <a href="Accessibility.html">Accessibility</a>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="https://scholarshiphubinc.netlify.app/" target="_blank" class="scholarship-button" rel="noopener noreferrer">
+                        <span>🏆</span><span>Scholarship Hub Inc.</span><span>→</span>
+                    </a>
+                </div>
             </div>
-            <div style="text-align: center; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--border);"><p>© 2025 Passage - Direct to Employers. Work Abroad.</p><p style="margin-top: 6px; font-size: 0.7rem;">WhatsApp: <a href="https://wa.me/231760766221" style="color: var(--gold);">+231 76 076 6221</a> | Email: scholarshiphub231@gmail.com</p></div>
+            <div style="text-align: center; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--border);">
+                <p>© 2025 Passage - Direct to Employers. Work Abroad.</p>
+                <p style="margin-top: 6px; font-size: 0.7rem;">WhatsApp: <a href="https://wa.me/231760766221" style="color: var(--gold);">+231 76 076 6221</a> | Email: scholarshiphub231@gmail.com</p>
+            </div>
         </div>
     </footer>
 
