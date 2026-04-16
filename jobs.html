@@ -23,6 +23,7 @@
             --border: #333333;
             --blue: #3b82f6;
             --red: #ef4444;
+            --green: #22c55e;
         }
 
         body {
@@ -39,7 +40,7 @@
             padding: 0 20px;
         }
 
-        /* ========== DROPDOWN NAVIGATION (FIXED) ========== */
+        /* ========== DROPDOWN NAVIGATION ========== */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -80,7 +81,6 @@
             color: inherit;
         }
 
-        /* Desktop nav links */
         .nav-links {
             display: flex;
             gap: 28px;
@@ -115,7 +115,6 @@
             color: var(--gold);
         }
 
-        /* Hamburger button (mobile only) */
         .menu-toggle {
             display: none;
             background: rgba(212, 175, 55, 0.1);
@@ -142,7 +141,6 @@
             border-color: var(--gold);
         }
 
-        /* Dropdown menu for mobile */
         .dropdown-menu {
             display: none;
             flex-direction: column;
@@ -230,6 +228,84 @@
         .trust-message p {
             color: var(--gold-light);
             font-size: 0.9rem;
+        }
+
+        /* Immigration Partners Section */
+        .immigration-partners {
+            margin: 40px 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(212, 175, 55, 0.05));
+            border-radius: 24px;
+            padding: 24px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .partners-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--gold);
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .partner-card {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 16px;
+            padding: 18px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .partner-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .partner-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .partner-details {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+
+        .partner-contact {
+            margin-top: 12px;
+        }
+
+        .partner-contact a {
+            color: var(--blue);
+            text-decoration: none;
+            font-size: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-right: 12px;
+        }
+
+        .partner-contact a:hover {
+            color: var(--gold);
+        }
+
+        .verify-badge {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--green);
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            margin-top: 8px;
         }
 
         .continent {
@@ -361,6 +437,26 @@
             transform: translateY(-2px);
         }
 
+        .visa-help-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            padding: 6px 14px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .visa-help-btn:hover {
+            background: rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+
         .verified-badge {
             display: inline-flex;
             align-items: center;
@@ -401,7 +497,19 @@
             color: var(--gray);
         }
 
-        /* Modern Footer */
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--red);
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-size: 0.8rem;
+        }
+
+        .warning-box strong {
+            color: var(--red);
+        }
+
         .modern-footer {
             background: linear-gradient(135deg, var(--black-medium), #0a0a0a);
             border-top: 1px solid var(--border);
@@ -577,7 +685,6 @@
             align-items: center;
         }
 
-        /* ========== RESPONSIVE PHONE OPTIMIZATION ========== */
         @media (max-width: 768px) {
             .container {
                 padding: 0 18px;
@@ -632,7 +739,6 @@
                 font-size: 1.1rem;
             }
             
-            /* Hide desktop nav, show hamburger */
             .nav-links {
                 display: none;
             }
@@ -685,6 +791,10 @@
                 max-width: 260px;
                 margin: 0 auto;
             }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 480px) {
@@ -716,7 +826,6 @@
             }
         }
         
-        /* Focus ring accessibility */
         :focus-visible {
             outline: 2px solid var(--gold);
             outline-offset: 3px;
@@ -731,7 +840,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- Navigation with Dropdown for Mobile (FIXED) -->
+        <!-- Navigation -->
         <nav class="navbar">
             <div class="logo"><a href="index.html">PASSAGE SHI.</a></div>
             <div class="nav-links">
@@ -759,10 +868,89 @@
         </div>
 
         <h2>Jobs <span>Direct to Employers</span></h2>
-        <p class="subtitle">Click "Apply via WhatsApp" to connect directly with the hiring company, no middlemen, no waiting</p>
+        <p class="subtitle">Click "Apply" to connect directly with the hiring company. Need visa help? Use the immigration partners below.</p>
 
         <div class="trust-message">
-            <p> <strong>See where you'll be working</strong> - Each job includes links to the company's website and Google Maps location so you can explore your future workplace before applying. Transparency builds trust.</p>
+            <p>⭐ <strong>See where you'll be working</strong> - Each job includes links to the company's website and Google Maps location so you can explore your future workplace before applying. Transparency builds trust.</p>
+        </div>
+
+        <!-- ========== IMMIGRATION PARTNERS SECTION ========== -->
+        <div class="immigration-partners">
+            <h3 class="partners-title">🇿🇦 Trusted Immigration Partners for African Applicants</h3>
+            <div class="partners-grid">
+                
+                <!-- Canada Abroad - RCIC in South Africa -->
+                <div class="partner-card">
+                    <div class="partner-name">🇨🇦 Canada Abroad</div>
+                    <div class="partner-details">Regulated Canadian Immigration Consultant (RCIC) - Deanne Acres. Former Canada Border Services Officer. One of only two active ICCRC members physically located in South Africa [citation:4].</div>
+                    <div class="partner-contact">
+                        <a href="https://www.canadaabroad.com" target="_blank">🌐 canadaabroad.com</a>
+                        <a href="mailto:deanne@canadaabroad.com">✉️ deanne@canadaabroad.com</a>
+                    </div>
+                    <div class="verify-badge">✅ ICCRC Registered | Verify at iccrc-crcic.ca</div>
+                </div>
+
+                <!-- Network Migration Services - Australia/NZ -->
+                <div class="partner-card">
+                    <div class="partner-name">🇦🇺🇳🇿 Network Migration Services</div>
+                    <div class="partner-details">Owned by Andrew Kerr - IAA licensed & MARA registered migration agent. 10,000+ families assisted since 1994. Offices in Johannesburg, Durban, Zimbabwe, and New Zealand [citation:2].</div>
+                    <div class="partner-contact">
+                        <a href="#" onclick="alert('Johannesburg Office: Mulberry Hill Office Park, Unit 16, 1st Floor, Broadacres Drive'); return false;">📍 Johannesburg Office</a>
+                    </div>
+                    <div class="verify-badge">✅ MARA Registered # IAA Licensed | Verify at mara.gov.au</div>
+                </div>
+
+                <!-- Budget Migration Services -->
+                <div class="partner-card">
+                    <div class="partner-name">🇦🇺 Budget Migration Services</div>
+                    <div class="partner-details">Registered and accredited by OMARA (Office of the Migration Agents Registration Authority). Specializes in Australian and New Zealand visas for South African applicants [citation:7].</div>
+                    <div class="partner-contact">
+                        <a href="#" onclick="alert('MARA Registration No: 2217828 | IAA No: 2022 00 373'); return false;">📋 MARA: 2217828</a>
+                    </div>
+                    <div class="verify-badge">✅ MARA Registered | IAA Accredited</div>
+                </div>
+
+                <!-- Move Up - UK Immigration -->
+                <div class="partner-card">
+                    <div class="partner-name">🇬🇧 Move Up - Relocation Solutions</div>
+                    <div class="partner-details">South African-governed UK immigration specialists. Backed by litigation attorney Gwen Vermeulen. Local accountability with British immigration expertise [citation:3].</div>
+                    <div class="partner-contact">
+                        <a href="https://moveup.co.za" target="_blank">🌐 moveup.co.za</a>
+                    </div>
+                    <div class="verify-badge">✅ South African Legal Oversight | UK Immigration Expertise</div>
+                </div>
+
+                <!-- Aloys & Associates - Tanzania -->
+                <div class="partner-card">
+                    <div class="partner-name">🇹🇿 Aloys & Associates (Tanzania)</div>
+                    <div class="partner-details">Immigration, Permits & Compliance specialists. Legal services including work permits, residency applications, and compliance matters for East Africa [citation:1].</div>
+                    <div class="partner-contact">
+                        <a href="https://aloysassociates.co.tz/contact/" target="_blank">🌐 aloysassociates.co.tz</a>
+                    </div>
+                    <div class="verify-badge">✅ Tanzanian Legal Practice | Immigration Experts</div>
+                </div>
+
+                <!-- Akram & Company - South Africa -->
+                <div class="partner-card">
+                    <div class="partner-name">🇿🇦 Akram & Company Inc.</div>
+                    <div class="partner-details">15+ years experience. Specialized in Immigration Law and Family Law. Offices in Durban, Johannesburg, and Cape Town. Level 1 B-BBEE contributor [citation:10].</div>
+                    <div class="partner-contact">
+                        <a href="#" onclick="alert('Lambert Road, Morningside, Durban | LPC Firm Number: 70191'); return false;">📍 Durban / JHB / Cape Town</a>
+                    </div>
+                    <div class="verify-badge">✅ LPC Registered | Level 1 B-BBEE</div>
+                </div>
+
+            </div>
+
+            <!-- How to Verify Immigration Consultants -->
+            <div class="warning-box" style="margin-top: 20px; background: rgba(34, 197, 94, 0.05); border-left-color: var(--green);">
+                <strong>🔍 How to Verify an Immigration Consultant:</strong><br>
+                • <strong>Canada:</strong> Search the ICCRC register at <strong>iccrc-crcic.ca</strong> - must show "Active" status [citation:4][citation:9]<br>
+                • <strong>Australia:</strong> Search MARA register at <strong>mara.gov.au</strong> - look for valid MARN number [citation:2][citation:7]<br>
+                • <strong>UK:</strong> Search IAA (formerly OISC) register at <strong>gov.uk/find-an-immigration-adviser</strong> [citation:3][citation:8]<br>
+                • <strong>USA:</strong> Check DOJ Recognition at <strong>justice.gov/eoir</strong> [citation:5]<br>
+                • <strong>⚠️ NEVER pay for an LMIA job in Canada - it's illegal!</strong> [citation:8]
+            </div>
         </div>
 
         <div class="stats-bar">
@@ -772,540 +960,234 @@
             <div class="stat"><div class="stat-number">Verified</div><div class="stat-label">Companies</div></div>
         </div>
 
-        <!-- NORTH AMERICA - CORRECTED FOR AFRICAN APPLICANTS -->
-<div class="continent">
-    <h3 class="continent-title">North America </h3>
-    <div class="jobs-grid">
-
-        <!-- CANADA CAREGIVER NEW 2026 PILOT - BEST OPTION -->
-        <div class="job-card">
-            <div class="job-title">Caregiver (New 2026 Pilot)</div>
-            <div class="job-company">🇨🇦 Canada Caregiver Pilot <span class="verified-badge">✓ Immediate PR</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Canada" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://www.canada.ca" target="_blank" class="company-link">🏢 IRCC Official</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> $19-24 CAD/hr</span></div>
-            <div class="job-description"><strong>🆕 2026 CAREGIVER PILOT PROGRAM:</strong> Live-in Caregiver Program is CLOSED to new applicants. The NEW 2026 pilot offers <strong>immediate permanent residence upon arrival</strong> - no more waiting years! Requirements: <strong>Only 6 months of caregiving experience</strong> within past 3 years. Experience can be in-home OR institutional settings. Part-time counts if full-time equivalent. THIS IS THE BEST PATHWAY for African caregivers. African applicants welcome.</div>
-            <div class="button-group">
-                <a href="https://www.canada.ca" target="_blank" class="apply-wa">🇨🇦 IRCC Official Portal</a>
-            </div>
-        </div>
-
-        <!-- CANADA HOMECHILD CARE PILOT -->
-        <div class="job-card">
-            <div class="job-title">Home Child Care Provider</div>
-            <div class="job-company">🇨🇦 Home Child Care Pilot <span class="verified-badge">✓ PR Pathway</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Canada" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://www.canada.ca" target="_blank" class="company-link">🏢 IRCC Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> $19-24 CAD/hr</span></div>
-            <div class="job-description"><strong>👶 HOME CHILD CARE PROVIDER PILOT:</strong> Requires <strong>12 months of Canadian caregiving experience</strong> (not 24 months!). No live-in requirement - you can have your own housing. Eligible for permanent residence after completing experience. This is a genuine government program for childcare providers. No LMIA required if you meet requirements.</div>
-            <div class="button-group">
-                <a href="https://www.canada.ca" target="_blank" class="apply-wa">🇨🇦 Apply via IRCC</a>
-            </div>
-        </div>
-
-        <!-- CANADA HOME SUPPORT WORKER PILOT -->
-        <div class="job-card">
-            <div class="job-title">Home Support Worker</div>
-            <div class="job-company">🇨🇦 Home Support Pilot <span class="verified-badge">✓ PR Pathway</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Canada" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://www.canada.ca" target="_blank" class="company-link">🏢 IRCC Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> $19-24 CAD/hr</span></div>
-            <div class="job-description"><strong>👵 HOME SUPPORT WORKER PILOT:</strong> For caregivers supporting elderly or persons with disabilities. Requires <strong>12 months Canadian experience</strong> (reduced from 24 months!). No live-in requirement. PR pathway after completion. African applicants with caregiving experience are welcome to apply through this program.</div>
-            <div class="button-group">
-                <a href="https://www.canada.ca" target="_blank" class="apply-wa">🇨🇦 IRCC Portal</a>
-            </div>
-        </div>
-
-        <!-- CANADA LMIA JOBS VIA JOB BANK -->
-        <div class="job-card">
-            <div class="job-title">LMIA Sponsored Jobs</div>
-            <div class="job-company">🇨🇦 Job Bank Canada <span class="verified-badge">✓ LMIA</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Canada" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://www.jobbank.gc.ca" target="_blank" class="company-link">🏢 Job Bank</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> Varies by role</span></div>
-            <div class="job-description"><strong>🇨🇦 GOVERNMENT LMIA JOB PORTAL:</strong> Search jobs from Canadian employers who have already obtained or applied for a Labour Market Impact Assessment (LMIA) [citation:3]. Current postings: ~4,000+ jobs including farm workers, truck drivers, construction, cooks, and caregivers [citation:8]. <strong>FREE to use - NEVER pay for an LMIA job - it's illegal!</strong> [citation:8] Filter by "LMIA approved" for faster processing.</div>
-            <div class="button-group">
-                <a href="https://www.jobbank.gc.ca/temporary-foreign-workers" target="_blank" class="apply-wa">🇨🇦 Search LMIA Jobs</a>
-            </div>
-        </div>
-
-        <!-- CANADA AGRICULTURE - SAWP -->
-        <div class="job-card">
-            <div class="job-title">Seasonal Farm Worker</div>
-            <div class="job-company">🇨🇦 SAWP Program <span class="verified-badge">✓ Seasonal Visa</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=British+Columbia" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://www.jobbank.gc.ca" target="_blank" class="company-link">🏢 Search Jobs</a>
-            </div>
-            <div class="job-meta"><span>📍 BC / Ontario / Quebec</span><span> $17-21 CAD/hr</span></div>
-            <div class="job-description"><strong>🍁 SEASONAL AGRICULTURAL WORKER PROGRAM:</strong> Canada's SAWP is a government-managed program for seasonal farm workers. Fruit picking, greenhouse work, harvesting. Housing provided by employers. African applicants are eligible - search Job Bank for "farm worker" with LMIA status. Multiple employers actively hiring from non-traditional source countries.</div>
-            <div class="button-group">
-                <a href="https://www.jobbank.gc.ca/farm-jobs" target="_blank" class="apply-wa">🇨🇦 Farm Jobs Portal</a>
-            </div>
-        </div>
-
-        <!-- USA H-2B VISA - NO NATIONALITY RESTRICTIONS -->
-        <div class="job-card">
-            <div class="job-title">Non-Agricultural Worker</div>
-            <div class="job-company">🇺🇸 H-2B Visa Program <span class="verified-badge">✓ H-2B</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=USA" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://www.uscis.gov/h-2b" target="_blank" class="company-link">🏢 USCIS Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> $15-25 USD/hr</span></div>
-            <div class="job-description"><strong>🇺🇸 H-2B VISA - NOW OPEN TO AFRICANS:</strong> The U.S. H-2B non-agricultural worker visa <strong>removed nationality restrictions in 2025</strong> - African applicants are now eligible! [citation:7] 65,000 visas available annually for seasonal non-agricultural work: construction, hospitality, landscaping, seafood processing, housekeeping, and more [citation:2][citation:7]. Employers must prove no U.S. workers available.</div>
-            <div class="button-group">
-                <a href="https://www.uscis.gov/h-2b" target="_blank" class="apply-wa">🇺🇸 USCIS H-2B Info</a>
-            </div>
-        </div>
-
-        <!-- USA H-2B CONSTRUCTION -->
-        <div class="job-card">
-            <div class="job-title">Construction Laborer</div>
-            <div class="job-company">🇺🇸 H-2B Construction <span class="verified-badge">✓ H-2B</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=USA" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Search H-2B job boards for construction positions'); return false;">🏢 Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Various States</span><span> $18-26 USD/hr</span></div>
-            <div class="job-description"><strong>🔨 CONSTRUCTION UNDER H-2B:</strong> General construction laborers, framers, drywall installers, and helpers are eligible for H-2B visas. The U.S. government allocated <strong>65,000 additional H-2B visas</strong> through September 30, 2026 to address workforce shortages [citation:2]. Construction companies facing labor shortages are actively recruiting. African applicants welcome.</div>
-            <div class="button-group">
-                <a href="https://www.seasonaljobs.dol.gov" target="_blank" class="apply-wa">🔍 H-2B Job Search</a>
-            </div>
-        </div>
-
-        <!-- USA H-2B HOSPITALITY -->
-        <div class="job-card">
-            <div class="job-title">Hotel / Hospitality Staff</div>
-            <div class="job-company">🇺🇸 H-2B Hospitality <span class="verified-badge">✓ H-2B</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=USA" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Housekeeping, kitchen help, maintenance'); return false;">🏢 Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Tourist Destinations</span><span> $15-20 USD/hr</span></div>
-            <div class="job-description"><strong>🏨 HOSPITALITY WORKERS:</strong> Hotels across the U.S. use H-2B visas for seasonal staff: housekeepers, kitchen helpers, maintenance workers, and front desk. The hospitality industry has long demanded more H-2B visas due to critical labor shortages [citation:2]. African applicants can apply through licensed recruiters.</div>
-            <div class="button-group">
-                <a href="https://www.uscis.gov/h-2b" target="_blank" class="apply-wa">🏨 Find H-2B Jobs</a>
-            </div>
-        </div>
-
-        <!-- USA H-2B LANDSCAPING -->
-        <div class="job-card">
-            <div class="job-title">Landscaper / Groundskeeper</div>
-            <div class="job-company">🇺🇸 H-2B Landscaping <span class="verified-badge">✓ H-2B</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=USA" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Landscaping is a major H-2B industry'); return false;">🏢 Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> $16-22 USD/hr</span></div>
-            <div class="job-description"><strong>🌿 LANDSCAPING & GROUNDSKEEPING:</strong> Landscaping is one of the largest industries using H-2B visas. Lawn maintenance, planting, groundskeeping. No experience needed for many positions. Seasonal work from spring through fall. Housing often provided. African applicants are now eligible under the 2025 rule change [citation:7].</div>
-            <div class="button-group">
-                <a href="https://www.seasonaljobs.dol.gov" target="_blank" class="apply-wa">🌿 Search Jobs</a>
-            </div>
-        </div>
-
-        <!-- USA H-1B VISA - SKILLED WORKERS -->
-        <div class="job-card">
-            <div class="job-title">Skilled Professional</div>
-            <div class="job-company">🇺🇸 H-1B Visa <span class="verified-badge">✓ H-1B</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=USA" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://www.uscis.gov/h-1b" target="_blank" class="company-link">🏢 USCIS Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> $60k-120k+ USD</span></div>
-            <div class="job-description"><strong>💼 H-1B SPECIALTY OCCUPATIONS:</strong> For professionals with at least a bachelor's degree. 65,000 regular cap + 20,000 master's cap annually [citation:9]. <strong>New wage-based lottery system for 2026</strong> - higher wage levels get better selection odds [citation:4][citation:9]. IT, engineering, healthcare, finance, and education roles qualify. African professionals with degrees can apply through employer sponsorship.</div>
-            <div class="button-group">
-                <a href="https://www.uscis.gov/h-1b" target="_blank" class="apply-wa">🇺🇸 H-1B Information</a>
-            </div>
-        </div>
-
-        <!-- USA H-1B HEALTHCARE -->
-        <div class="job-card">
-            <div class="job-title">Healthcare Professional</div>
-            <div class="job-company">🇺🇸 H-1B Healthcare <span class="verified-badge">✓ H-1B</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=USA" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Nurses, pharmacists, physical therapists'); return false;">🏢 Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> $70k-120k+ USD</span></div>
-            <div class="job-description"><strong>🏥 HEALTHCARE UNDER H-1B:</strong> Registered nurses, physical therapists, pharmacists, and medical technologists qualify as specialty occupations. Requires degree and sometimes U.S. licensing (NCLEX for nurses). Healthcare workers are in high demand. African healthcare professionals with recognized qualifications can apply through U.S. hospital systems.</div>
-            <div class="button-group">
-                <a href="https://www.uscis.gov/h-1b" target="_blank" class="apply-wa">🏥 Healthcare Jobs</a>
-            </div>
-        </div>
-
-        <!-- USA SEAFOOD PROCESSING - H-2B -->
-        <div class="job-card">
-            <div class="job-title">Seafood Processor</div>
-            <div class="job-company">🇺🇸 H-2B Seafood <span class="verified-badge">✓ H-2B</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Alaska+USA" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Alaska seafood processing - housing provided'); return false;">🏢 Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Alaska / Washington</span><span> $16-20 USD/hr</span></div>
-            <div class="job-description"><strong>🦞 SEAFOOD PROCESSING - H-2B:</strong> Seafood processing is explicitly listed as an H-2B industry facing critical manpower deficits [citation:2]. Alaska fish processing plants hire hundreds of H-2B workers annually. Housing and meals often provided. No experience needed. African applicants eligible under the 2025 rule change [citation:7].</div>
-            <div class="button-group">
-                <a href="https://www.seasonaljobs.dol.gov" target="_blank" class="apply-wa">🦞 Find Seafood Jobs</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-        <!-- EUROPE - CORRECTED FOR AFRICAN APPLICANTS -->
-<div class="continent">
-    <h3 class="continent-title">Europe </h3>
-    <div class="jobs-grid">
-
-        <!-- ITALY AGRICULTURE - LARGEST PROGRAM -->
-        <div class="job-card">
-            <div class="job-title">Seasonal Farm Worker</div>
-            <div class="job-company">🇮🇹 Italian Agriculture <span class="verified-badge">✓ Seasonal Work Visa</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Italy" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Government program | 24,288 visas for 2026'); return false;">🏢 Program Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Various regions</span><span> €10-20/hr</span></div>
-            <div class="job-description"><strong>🍋 Government-Backed Program:</strong> Italy has allocated 24,288 work visas specifically for agriculture jobs in 2026. Fruit picking, harvesting, planting. No experience needed. Accommodation and meals provided by many employers. Open to ALL nationalities including Nigeria, Ghana, Morocco, Tunisia, Senegal. Apply directly through Italian government portal - NO AGENTS NEEDED. [citation:3]</div>
-            <div class="button-group">
-                <a href="https://www.interno.gov.it" target="_blank" class="apply-wa">🇮🇹 Apply via Italy Portal</a>
-            </div>
-        </div>
-
-        <!-- ITALY VINEYARD WORK -->
-        <div class="job-card">
-            <div class="job-title">Vineyard Worker</div>
-            <div class="job-company">🇮🇹 Italian Vineyards <span class="verified-badge">✓ Seasonal Visa</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Tuscany+Italy" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Wine harvest | Accommodation provided'); return false;">🏢 Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Tuscany / Piedmont</span><span> €10-15/hr</span></div>
-            <div class="job-description">🍇 Grape harvesting for wine production. Seasonal work from August-October. Part of Italy's seasonal worker program. Many vineyards provide accommodation and meals. African applicants welcome through the government quota system. [citation:3]</div>
-            <div class="button-group">
-                <a href="https://www.italyworkvisa.it" target="_blank" class="apply-wa">🔍 Find Vineyard Jobs</a>
-            </div>
-        </div>
-
-        <!-- IRELAND HOME CARE - QUOTA PROGRAM -->
-        <div class="job-card">
-            <div class="job-title">Home Carer / Care Worker</div>
-            <div class="job-company">🇮🇪 Irish Home Care <span class="verified-badge">✓ General Employment Permit</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Ireland" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://enterprise.gov.ie" target="_blank" class="company-link">🏢 Official Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> €30,000-34,000/yr</span></div>
-            <div class="job-description"><strong>🏠 Government Quota Program:</strong> Ireland has a dedicated quota of 1,000 General Employment Permits for home carers (2025). Minimum salary €30,000+. This is a legitimate, government-backed pathway for non-EEA care workers. The role was added due to critical skills shortages. PR pathway available. [citation:1][citation:4]</div>
-            <div class="button-group">
-                <a href="https://www.gov.ie/en/employment-permits" target="_blank" class="apply-wa">🇮🇪 Apply via Ireland Portal</a>
-            </div>
-        </div>
-
-        <!-- IRELAND HEALTHCARE ASSISTANT -->
-        <div class="job-card">
-            <div class="job-title">Healthcare Assistant</div>
-            <div class="job-company">🇮🇪 Irish Health Service <span class="verified-badge">✓ General Employment Permit</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Dublin+Ireland" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://www.hse.ie" target="_blank" class="company-link">🏢 HSE Careers</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> €30,000-34,000/yr</span></div>
-            <div class="job-description">🏥 Healthcare assistants are eligible for General Employment Permits in Ireland. Minimum salary €30,000 (increasing to €34,000 in 2026). This role is critical to Ireland's healthcare system, and non-EEA workers are actively recruited. The HSE (public health service) sponsors permits. [citation:4][citation:7]</div>
-            <div class="button-group">
-                <a href="https://www.hse.ie/eng/staff/jobs" target="_blank" class="apply-wa">🏥 Apply via HSE</a>
-            </div>
-        </div>
-
-        <!-- IRELAND HORTICULTURE -->
-        <div class="job-card">
-            <div class="job-title">Horticulture Worker</div>
-            <div class="job-company">🇮🇪 Irish Horticulture <span class="verified-badge">✓ General Employment Permit</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Ireland" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Quota program | Minimum salary €30,000'); return false;">🏢 Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> €30,000+/yr</span></div>
-            <div class="job-description">🌱 Horticultural workers (plant nurseries, crop production) are eligible for General Employment Permits in Ireland. Minimum salary €30,000 from 2024. This is a quota-based program with visa sponsorship available for non-EEA workers. [citation:4]</div>
-            <div class="button-group">
-                <a href="https://www.irishjobs.ie" target="_blank" class="apply-wa">🔍 Search Jobs</a>
-            </div>
-        </div>
-
-        <!-- GERMANY EU BLUE CARD - HEALTHCARE -->
-        <div class="job-card">
-            <div class="job-title">Healthcare Professional</div>
-            <div class="job-company">🇩🇪 German Hospitals <span class="verified-badge">✓ EU Blue Card</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Germany" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://www.make-it-in-germany.com" target="_blank" class="company-link">🏢 Make it in Germany</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> €45,934-50,700+/yr</span></div>
-            <div class="job-description"><strong>🩺 Germany's Official Program:</strong> Healthcare professionals are on Germany's shortage occupation list, qualifying for the lower EU Blue Card salary threshold of €45,934 (2026). Nurses, doctors, and care workers are in high demand. Recognized qualifications required. PR possible in 21-27 months. African healthcare workers welcome. [citation:2][citation:8]</div>
-            <div class="button-group">
-                <a href="https://www.make-it-in-germany.com" target="_blank" class="apply-wa">🇩🇪 Official Portal</a>
-            </div>
-        </div>
-
-        <!-- GERMANY EU BLUE CARD - IT/TECH -->
-        <div class="job-card">
-            <div class="job-title">IT Professional</div>
-            <div class="job-company">🇩🇪 German Tech <span class="verified-badge">✓ EU Blue Card</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Berlin+Germany" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://www.bluecard-eu.de" target="_blank" class="company-link">🏢 EU Blue Card Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Berlin / Munich / Frankfurt</span><span> €50,700+/yr</span></div>
-            <div class="job-description"><strong>💻 IT Specialists Welcome:</strong> Germany's EU Blue Card is available to IT professionals - even without a university degree if you have 3+ years experience. Minimum salary €45,934 for shortage occupations (IT is included). Fast-track to permanent residency (21-27 months). African tech workers actively recruited. [citation:2][citation:5][citation:8]</div>
-            <div class="button-group">
-                <a href="https://www.make-it-in-germany.com" target="_blank" class="apply-wa">🇩🇪 IT Jobs Portal</a>
-            </div>
-        </div>
-
-        <!-- GERMANY SKILLED WORKERS -->
-        <div class="job-card">
-            <div class="job-title">Skilled Trades</div>
-            <div class="job-company">🇩🇪 German Industry <span class="verified-badge">✓ Skilled Immigration Act</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Germany" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://www.arbeitsagentur.de" target="_blank" class="company-link">🏢 Federal Employment Agency</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> €45,934+/yr</span></div>
-            <div class="job-description"><strong>🔧 Skilled Immigration Act (2023/2024):</strong> Germany has significantly lowered requirements for non-EU skilled workers. Electricians, mechanics, welders, and construction workers are eligible. Vocational training recognized. Minimum salary €45,934 for collective agreement jobs. African tradespeople welcome. [citation:8]</div>
-            <div class="button-group">
-                <a href="https://www.make-it-in-germany.com" target="_blank" class="apply-wa">🇩🇪 Trades Portal</a>
-            </div>
-        </div>
-
-        <!-- SPAIN - SENEGAL PROGRAM -->
-        <div class="job-card">
-            <div class="job-title">Seasonal Agricultural Worker</div>
-            <div class="job-company">🇪🇸 Spanish Agriculture <span class="verified-badge">✓ Circular Migration</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Spain" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Circular migration program | 100+ Senegalese hired'); return false;">🏢 Program Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Andalusia / Catalonia</span><span> €1,200-1,500/mo</span></div>
-            <div class="job-description"><strong>🇪🇸 Spain-Senegal Circular Migration Program:</strong> Spain has launched a specific program for Senegalese agricultural workers (minimum 100 workers). Part of Spain's "circular migration" model - workers return home after season but can come back annually. Legal, government-backed pathway. Other African nationalities may also qualify. [citation:9]</div>
-            <div class="button-group">
-                <a href="https://www.sepe.es" target="_blank" class="apply-wa">🇪🇸 Spanish Employment Service</a>
-            </div>
-        </div>
-
-        <!-- SPAIN GENERAL SEASONAL -->
-        <div class="job-card">
-            <div class="job-title">Fruit/Vegetable Picker</div>
-            <div class="job-company">🇪🇸 Spanish Harvest <span class="verified-badge">✓ Seasonal Visa</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Valencia+Spain" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Part of circular migration program'); return false;">🏢 Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Valencia / Murcia</span><span> €1,200-1,600/mo</span></div>
-            <div class="job-description">🍊 Orange, strawberry, and vegetable harvesting. Spain's seasonal worker program provides legal visas for non-EU workers. Accommodation arranged by employers. African applicants from Morocco, Senegal, and other nations can apply through the government system. [citation:9]</div>
-            <div class="button-group">
-                <a href="https://www.mites.gob.es" target="_blank" class="apply-wa">🇪🇸 Apply via Spain</a>
-            </div>
-        </div>
-
-        <!-- LUXEMBOURG - COMPREHENSIVE -->
-        <div class="job-card">
-            <div class="job-title">Multiple Sectors</div>
-            <div class="job-company">🇱🇺 Luxembourg <span class="verified-badge">✓ Work Visa</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Luxembourg" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://guichet.public.lu" target="_blank" class="company-link">🏢 Official Portal</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> Varies by sector</span></div>
-            <div class="job-description"><strong>🇱🇺 Luxembourg Welcomes African Workers:</strong> Industries with visa sponsorship: Hospitality (waiters, chefs, hotel staff), Construction (laborers, electricians, welders), Logistics (drivers, warehouse), Caregiving (elderly care, domestic help). Ethiopian citizens specifically mentioned as eligible. Type D long-term visa available. [citation:6]</div>
-            <div class="button-group">
-                <a href="https://guichet.public.lu" target="_blank" class="apply-wa">🇱🇺 Luxembourg Portal</a>
-            </div>
-        </div>
-
-        <!-- LUXEMBOURG FINANCE/IT -->
-        <div class="job-card">
-            <div class="job-title">Finance / IT Professional</div>
-            <div class="job-company">🇱🇺 Luxembourg Finance <span class="verified-badge">✓ Work Visa</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Luxembourg" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://jobs.lu" target="_blank" class="company-link">🏢 Jobs.lu</a>
-            </div>
-            <div class="job-meta"><span>📍 Luxembourg City</span><span> Competitive salary</span></div>
-            <div class="job-description">💼 Luxembourg is a major financial center. IT, finance, accounting, and engineering professionals are in high demand. Visa sponsorship available. African professionals with qualifications are welcome. Use job platforms like LinkedIn and Jobs.lu to find sponsored roles. [citation:6]</div>
-            <div class="button-group">
-                <a href="https://jobs.lu" target="_blank" class="apply-wa">💼 Jobs.lu</a>
-            </div>
-        </div>
-
-        <!-- IRELAND CONSTRUCTION/TRADES -->
-        <div class="job-card">
-            <div class="job-title">Construction Worker</div>
-            <div class="job-company">🇮🇪 Irish Construction <span class="verified-badge">✓ General Employment Permit</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Ireland" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Electricians, mechanics, welders eligible'); return false;">🏢 Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> €34,000-39,000/yr</span></div>
-            <div class="job-description">🔨 Electricians, mechanics, HGV mechanics, welders, and vehicle body builders are now eligible for General Employment Permits in Ireland. Added due to critical skills shortages. Minimum salary €34,000 (2024) increasing to €39,000. Non-EEA workers actively recruited. [citation:4]</div>
-            <div class="button-group">
-                <a href="https://www.constructionjobs.ie" target="_blank" class="apply-wa">🔨 Construction Jobs</a>
-            </div>
-        </div>
-
-        <!-- IRELAND BAKERY -->
-        <div class="job-card">
-            <div class="job-title">Baker</div>
-            <div class="job-company">🇮🇪 Irish Bakeries <span class="verified-badge">✓ General Employment Permit</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Ireland" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Baker added to eligible occupations in 2023'); return false;">🏢 Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> €30,000-34,000/yr</span></div>
-            <div class="job-description">🍞 Bakers were added to Ireland's eligible occupations list in December 2023. General Employment Permit available with employer sponsorship. Minimum salary €30,000+. This is a skilled trade with genuine shortages in Ireland. [citation:4]</div>
-            <div class="button-group">
-                <a href="https://www.irishjobs.ie" target="_blank" class="apply-wa">🍞 Find Baker Jobs</a>
-            </div>
-        </div>
-
-        <!-- IRELAND MEAT PROCESSING -->
-        <div class="job-card">
-            <div class="job-title">Meat Processor / Butcher</div>
-            <div class="job-company">🇮🇪 Irish Meat Industry <span class="verified-badge">✓ General Employment Permit</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Ireland" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Quota program | Salary €30,000'); return false;">🏢 Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> €30,000-32,000/yr</span></div>
-            <div class="job-description">🥩 Meat processing operatives and butchers/deboners are eligible for General Employment Permits in Ireland. Quota-based program. Minimum salary €30,000 (2024) increasing to €32,000 (2026) and €34,000 (2025 target). Non-EEA workers welcome. [citation:4][citation:7]</div>
-            <div class="button-group">
-                <a href="https://www.meatindustryjobs.ie" target="_blank" class="apply-wa">🥩 Meat Industry Jobs</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-        <!-- ASIA PACIFIC - 20 JOBS -->
+        <!-- ========== NORTH AMERICA ========== -->
         <div class="continent">
-    <h3 class="continent-title">Asia Pacific </h3>
-    <div class="jobs-grid">
+            <h3 class="continent-title">North America 🇨🇦🇺🇸</h3>
+            <div class="jobs-grid">
+
+                <div class="job-card">
+                    <div class="job-title">Caregiver (New 2026 Pilot)</div>
+                    <div class="job-company">🇨🇦 Canada Caregiver Pilot <span class="verified-badge">✓ Immediate PR</span></div>
+                    <div class="company-links">
+                        <a href="https://maps.google.com/?q=Canada" target="_blank" class="company-link map-link">📍 Map</a>
+                        <a href="https://www.canada.ca" target="_blank" class="company-link">🏢 IRCC Official</a>
+                    </div>
+                    <div class="job-meta"><span>📍 Nationwide</span><span> $19-24 CAD/hr</span></div>
+                    <div class="job-description"><strong>🆕 2026 CAREGIVER PILOT PROGRAM:</strong> Live-in Caregiver Program is CLOSED. NEW pilot offers <strong>immediate permanent residence upon arrival</strong>! Only 6 months caregiving experience needed. African applicants welcome.</div>
+                    <div class="button-group">
+                        <a href="https://www.canada.ca" target="_blank" class="apply-wa">🇨🇦 Apply via IRCC</a>
+                        <a href="https://www.canadaabroad.com" target="_blank" class="visa-help-btn">🛂 Need visa help? Contact Canada Abroad (RCIC)</a>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-title">LMIA Sponsored Jobs</div>
+                    <div class="job-company">🇨🇦 Job Bank Canada <span class="verified-badge">✓ LMIA</span></div>
+                    <div class="company-links">
+                        <a href="https://maps.google.com/?q=Canada" target="_blank" class="company-link map-link">📍 Map</a>
+                        <a href="https://www.jobbank.gc.ca" target="_blank" class="company-link">🏢 Job Bank</a>
+                    </div>
+                    <div class="job-meta"><span>📍 Nationwide</span><span> Varies by role</span></div>
+                    <div class="job-description"><strong>🇨🇦 GOVERNMENT LMIA JOB PORTAL:</strong> 4,000+ jobs including farm workers, truck drivers, construction, cooks, and caregivers. <strong>FREE to use - NEVER pay for an LMIA job!</strong></div>
+                    <div class="button-group">
+                        <a href="https://www.jobbank.gc.ca/temporary-foreign-workers" target="_blank" class="apply-wa">🇨🇦 Search LMIA Jobs</a>
+                        <a href="https://www.canadaabroad.com" target="_blank" class="visa-help-btn">🛂 Visa help: Canada Abroad (RCIC)</a>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-title">Non-Agricultural Worker</div>
+                    <div class="job-company">🇺🇸 H-2B Visa Program <span class="verified-badge">✓ H-2B</span></div>
+                    <div class="company-links">
+                        <a href="https://maps.google.com/?q=USA" target="_blank" class="company-link map-link">📍 Map</a>
+                        <a href="https://www.uscis.gov/h-2b" target="_blank" class="company-link">🏢 USCIS Info</a>
+                    </div>
+                    <div class="job-meta"><span>📍 Nationwide</span><span> $15-25 USD/hr</span></div>
+                    <div class="job-description"><strong>🇺🇸 H-2B VISA - NOW OPEN TO AFRICANS:</strong> Removed nationality restrictions in 2025. Construction, hospitality, landscaping, seafood processing. 65,000 visas annually.</div>
+                    <div class="button-group">
+                        <a href="https://www.uscis.gov/h-2b" target="_blank" class="apply-wa">🇺🇸 USCIS H-2B Info</a>
+                        <a href="#" class="visa-help-btn" onclick="alert('US immigration assistance: The Nigerian Center (DOJ-recognized) - Washington DC | US Embassy Pretoria: +27 (12) 431-4000'); return false;">🛂 US Visa Help</a>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-title">Skilled Professional</div>
+                    <div class="job-company">🇺🇸 H-1B Visa <span class="verified-badge">✓ H-1B</span></div>
+                    <div class="company-links">
+                        <a href="https://maps.google.com/?q=USA" target="_blank" class="company-link map-link">📍 Map</a>
+                        <a href="https://www.uscis.gov/h-1b" target="_blank" class="company-link">🏢 USCIS Info</a>
+                    </div>
+                    <div class="job-meta"><span>📍 Nationwide</span><span> $60k-120k+ USD</span></div>
+                    <div class="job-description"><strong>💼 H-1B SPECIALTY OCCUPATIONS:</strong> Bachelor's degree required. 65,000 regular cap + 20,000 master's cap. New wage-based lottery for 2026. IT, engineering, healthcare, finance.</div>
+                    <div class="button-group">
+                        <a href="https://www.uscis.gov/h-1b" target="_blank" class="apply-wa">🇺🇸 H-1B Information</a>
+                        <a href="#" class="visa-help-btn" onclick="alert('The Nigerian Center (DOJ-recognized) provides free-to-low-cost US immigration legal services. Recognized by US Department of Justice Executive Office for Immigration Review.'); return false;">🛂 DOJ-Recognized Legal Aid</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========== EUROPE ========== -->
+        <div class="continent">
+            <h3 class="continent-title">Europe 🇪🇺</h3>
+            <div class="jobs-grid">
+
+                <div class="job-card">
+                    <div class="job-title">Seasonal Farm Worker</div>
+                    <div class="job-company">🇮🇹 Italian Agriculture <span class="verified-badge">✓ Seasonal Work Visa</span></div>
+                    <div class="company-links">
+                        <a href="https://maps.google.com/?q=Italy" target="_blank" class="company-link map-link">📍 Map</a>
+                        <a href="https://www.interno.gov.it" target="_blank" class="company-link">🏢 Italy Portal</a>
+                    </div>
+                    <div class="job-meta"><span>📍 Various regions</span><span> €10-20/hr</span></div>
+                    <div class="job-description"><strong>🍋 Government-Backed Program:</strong> Italy allocated 24,288 work visas for agriculture jobs in 2026. Open to ALL nationalities including Nigeria, Ghana, Morocco, Tunisia, Senegal. Apply directly - NO AGENTS NEEDED.</div>
+                    <div class="button-group">
+                        <a href="https://www.interno.gov.it" target="_blank" class="apply-wa">🇮🇹 Apply via Italy Portal</a>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-title">Home Carer / Care Worker</div>
+                    <div class="job-company">🇮🇪 Irish Home Care <span class="verified-badge">✓ General Employment Permit</span></div>
+                    <div class="company-links">
+                        <a href="https://maps.google.com/?q=Ireland" target="_blank" class="company-link map-link">📍 Map</a>
+                        <a href="https://enterprise.gov.ie" target="_blank" class="company-link">🏢 Official Info</a>
+                    </div>
+                    <div class="job-meta"><span>📍 Nationwide</span><span> €30,000-34,000/yr</span></div>
+                    <div class="job-description"><strong>🏠 Government Quota Program:</strong> Ireland has 1,000 General Employment Permits for home carers (2025). PR pathway available.</div>
+                    <div class="button-group">
+                        <a href="https://www.gov.ie/en/employment-permits" target="_blank" class="apply-wa">🇮🇪 Apply via Ireland Portal</a>
+                        <a href="https://moveup.co.za" target="_blank" class="visa-help-btn">🛂 Visa help: Move Up (UK/Ireland)</a>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-title">Healthcare Professional</div>
+                    <div class="job-company">🇩🇪 German Hospitals <span class="verified-badge">✓ EU Blue Card</span></div>
+                    <div class="company-links">
+                        <a href="https://maps.google.com/?q=Germany" target="_blank" class="company-link map-link">📍 Map</a>
+                        <a href="https://www.make-it-in-germany.com" target="_blank" class="company-link">🏢 Make it in Germany</a>
+                    </div>
+                    <div class="job-meta"><span>📍 Nationwide</span><span> €45,934-50,700+/yr</span></div>
+                    <div class="job-description"><strong>🩺 Germany's Official Program:</strong> Healthcare professionals qualify for lower EU Blue Card salary threshold (€45,934). PR possible in 21-27 months.</div>
+                    <div class="button-group">
+                        <a href="https://www.make-it-in-germany.com" target="_blank" class="apply-wa">🇩🇪 Official Portal</a>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-title">IT Professional</div>
+                    <div class="job-company">🇩🇪 German Tech <span class="verified-badge">✓ EU Blue Card</span></div>
+                    <div class="company-links">
+                        <a href="https://maps.google.com/?q=Berlin+Germany" target="_blank" class="company-link map-link">📍 Map</a>
+                        <a href="https://www.bluecard-eu.de" target="_blank" class="company-link">🏢 EU Blue Card Info</a>
+                    </div>
+                    <div class="job-meta"><span>📍 Berlin / Munich / Frankfurt</span><span> €50,700+/yr</span></div>
+                    <div class="job-description"><strong>💻 IT Specialists Welcome:</strong> EU Blue Card available even without degree if you have 3+ years experience. African tech workers actively recruited.</div>
+                    <div class="button-group">
+                        <a href="https://www.make-it-in-germany.com" target="_blank" class="apply-wa">🇩🇪 IT Jobs Portal</a>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-title">Multiple Sectors</div>
+                    <div class="job-company">🇱🇺 Luxembourg <span class="verified-badge">✓ Work Visa</span></div>
+                    <div class="company-links">
+                        <a href="https://maps.google.com/?q=Luxembourg" target="_blank" class="company-link map-link">📍 Map</a>
+                        <a href="https://guichet.public.lu" target="_blank" class="company-link">🏢 Official Portal</a>
+                    </div>
+                    <div class="job-meta"><span>📍 Nationwide</span><span> Varies by sector</span></div>
+                    <div class="job-description"><strong>🇱🇺 Luxembourg Welcomes African Workers:</strong> Hospitality, construction, logistics, caregiving. Ethiopian citizens specifically mentioned as eligible. Type D long-term visa available.</div>
+                    <div class="button-group">
+                        <a href="https://guichet.public.lu" target="_blank" class="apply-wa">🇱🇺 Luxembourg Portal</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========== ASIA PACIFIC ========== -->
+        <div class="continent">
+            <h3 class="continent-title">Asia Pacific 🇦🇺🇳🇿</h3>
+            <div class="jobs-grid">
         
-        <!-- AGRICULTURE / FARM WORK - Most Accessible for Africans -->
-        <div class="job-card">
-            <div class="job-title">Farm Worker</div>
-            <div class="job-company">🇦🇺 Brothers Farming Group <span class="verified-badge">✓ 482 Visa / DAMA</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Victoria+Queensland+Australia" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://www.costagroup.com.au" target="_blank" class="company-link">🏢 Costa Group</a>
-            </div>
-            <div class="job-meta"><span>📍 Victoria / QLD</span><span> $25-30 AUD/hr</span></div>
-            <div class="job-description">Citrus, berry, avocado picking. Farm accommodation available. African applicants welcome via 482 sponsorship or DAMA programs [citation:1][citation:5].</div>
-            <div class="button-group">
-                <a href="https://482jobs.com/job-category/farming-animals-conservation/" target="_blank" class="apply-wa">🔍 Find Jobs</a>
-            </div>
-        </div>
+                <div class="job-card">
+                    <div class="job-title">Farm Worker</div>
+                    <div class="job-company">🇦🇺 Australian Agriculture <span class="verified-badge">✓ 482 Visa / DAMA</span></div>
+                    <div class="company-links">
+                        <a href="https://maps.google.com/?q=Victoria+Queensland+Australia" target="_blank" class="company-link map-link">📍 Map</a>
+                        <a href="https://www.costagroup.com.au" target="_blank" class="company-link">🏢 Costa Group</a>
+                    </div>
+                    <div class="job-meta"><span>📍 Victoria / QLD</span><span> $25-30 AUD/hr</span></div>
+                    <div class="job-description">Citrus, berry, avocado picking. Farm accommodation available. African applicants welcome via 482 sponsorship or DAMA programs.</div>
+                    <div class="button-group">
+                        <a href="https://482jobs.com/job-category/farming-animals-conservation/" target="_blank" class="apply-wa">🔍 Find Jobs</a>
+                        <a href="#" class="visa-help-btn" onclick="alert('Australian visa assistance in Africa:\n• Network Migration Services (SA) - MARA registered\n• Budget Migration Services (SA) - MARA #2217828\nVerify at mara.gov.au'); return false;">🛂 MARA Registered Agents</a>
+                    </div>
+                </div>
 
-        <div class="job-card">
-            <div class="job-title">Dairy Farm Worker</div>
-            <div class="job-company">🇦🇺 Delta Immigration <span class="verified-badge">✓ 482 / DAMA</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Regional+Australia" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="http://deltaimmigration.com.au" target="_blank" class="company-link">🏢 Agency Profile</a>
-            </div>
-            <div class="job-meta"><span>📍 Regional Australia</span><span> $55k-65k AUD/yr</span></div>
-            <div class="job-description">Dairy farming operations. Nigerian applicants with animal production qualifications actively seeking sponsorship [citation:3].</div>
-            <div class="button-group">
-                <a href="https://www.seek.com.au" target="_blank" class="apply-wa">🔍 SEEK Jobs</a>
-            </div>
-        </div>
+                <div class="job-card">
+                    <div class="job-title">Aged Care / Personal Care</div>
+                    <div class="job-company">🇦🇺 Aged Care ILA <span class="verified-badge">✓ 482 ILA</span></div>
+                    <div class="company-links">
+                        <a href="https://maps.google.com/?q=Sydney+NSW" target="_blank" class="company-link map-link">📍 Map</a>
+                        <a href="https://immi.homeaffairs.gov.au" target="_blank" class="company-link">🏢 Home Affairs</a>
+                    </div>
+                    <div class="job-meta"><span>📍 Nationwide</span><span> $51k-73k AUD/yr</span></div>
+                    <div class="job-description">Aged care with full 482 sponsorship via Industry Labour Agreement. Reduced salary threshold ($51,222) and relaxed English (IELTS 4.5-5.0). PR pathway.</div>
+                    <div class="button-group">
+                        <a href="https://immi.homeaffairs.gov.au" target="_blank" class="apply-wa">📖 Visa Info</a>
+                        <a href="#" class="visa-help-btn" onclick="alert('Australian visa assistance:\n• Network Migration Services (SA)\n• Budget Migration Services (SA)\n• Verify MARA registration at mara.gov.au'); return false;">🛂 MARA Agents</a>
+                    </div>
+                </div>
 
-        <!-- AGED CARE - Strong Sponsorship Pathway -->
-        <div class="job-card">
-            <div class="job-title">Aged Care / Personal Care</div>
-            <div class="job-company">🇦🇺 ElderCare <span class="verified-badge">✓ 482 ILA</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Sydney+NSW" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://www.eldercare.net.au/" target="_blank" class="company-link">🏢 Official Site</a>
-            </div>
-            <div class="job-meta"><span>📍 Sydney</span><span> $51k-73k AUD/yr</span></div>
-            <div class="job-description">Aged care with full 482 sponsorship via Industry Labour Agreement. Reduced salary threshold ($51,222) and relaxed English requirements (IELTS 4.5-5.0). Cert III preferred but experience can substitute [citation:2].</div>
-            <div class="button-group">
-                <a href="https://www.eldercare.net.au/careers" target="_blank" class="apply-wa">🎯 Apply</a>
-            </div>
-        </div>
+                <div class="job-card">
+                    <div class="job-title">Construction / Trades</div>
+                    <div class="job-company">🇦🇺 Regional Employers <span class="verified-badge">✓ 494 / DAMA</span></div>
+                    <div class="company-links">
+                        <a href="https://maps.google.com/?q=Regional+Australia" target="_blank" class="company-link map-link">📍 Map</a>
+                        <a href="#" class="company-link" onclick="alert('Skilled Employer Sponsored Regional Visa - Subclass 494'); return false;">📋 Info</a>
+                    </div>
+                    <div class="job-meta"><span>📍 Regional Australia</span><span> $70k-90k AUD/yr</span></div>
+                    <div class="job-description">General construction, carpentry, plumbing, welding. Regional sponsorship visas (494) available. African trade qualifications accepted with skills assessment.</div>
+                    <div class="button-group">
+                        <a href="https://www.agrilabour.com.au" target="_blank" class="apply-wa">🔍 Agri Labour</a>
+                    </div>
+                </div>
 
-        <div class="job-card">
-            <div class="job-title">Nursing Support</div>
-            <div class="job-company">🇦🇺 Various Providers <span class="verified-badge">✓ 482 ILA</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Australia" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Aged Care ILA covers: Nursing Support Workers, Personal Care Assistants, Aged Carers'); return false;">📋 Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Nationwide</span><span> $51k+ AUD/yr</span></div>
-            <div class="job-description">Assistants in Nursing and Personal Care Workers eligible under Aged Care Industry Labour Agreement. Union MoU required (ANMF/HSU/UWU). PR pathway available [citation:2].</div>
-            <div class="button-group">
-                <a href="https://immi.homeaffairs.gov.au" target="_blank" class="apply-wa">📖 Visa Info</a>
-            </div>
-        </div>
-
-        <!-- TRADES & CONSTRUCTION -->
-        <div class="job-card">
-            <div class="job-title">Construction / Trades</div>
-            <div class="job-company">🇦🇺 Regional Employers <span class="verified-badge">✓ 494 / DAMA</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Regional+Australia" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('Skilled Employer Sponsored Regional Visa - Subclass 494'); return false;">📋 Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Regional Australia</span><span> $70k-90k AUD/yr</span></div>
-            <div class="job-description">General construction, carpentry, plumbing, welding. Regional sponsorship visas (494) available. African trade qualifications accepted with skills assessment [citation:4].</div>
-            <div class="button-group">
-                <a href="https://www.agrilabour.com.au" target="_blank" class="apply-wa">🔍 Agri Labour</a>
-            </div>
-        </div>
-
-        <!-- SPECIALIZED PROGRAMS -->
-        <div class="job-card">
-            <div class="job-title">Afrikaner Skills Visa</div>
-            <div class="job-company">🇦🇺 Global Talent Pathway <span class="verified-badge">✓ Designated Visa</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Regional+Australia" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="https://www.globaltalentpathway.co.za" target="_blank" class="company-link">🏢 Program Site</a>
-            </div>
-            <div class="job-meta"><span>📍 Regional Australia</span><span> Market Rate</span></div>
-            <div class="job-description">Specialized program for Afrikaner workers. Includes: farming, truck driving, construction, aged care, and hospitality. No skills assessment required. IELTS 4.5 only. 4-6 months processing. Direct PR possible [citation:6].</div>
-            <div class="button-group">
-                <a href="https://www.globaltalentpathway.co.za/info/how-the-visa-works" target="_blank" class="apply-wa">🇿🇦 Apply</a>
-            </div>
-        </div>
-
-        <div class="job-card">
-            <div class="job-title">Truck Driver</div>
-            <div class="job-company">🇦🇺 Regional Transport <span class="verified-badge">✓ 482 / DAMA</span></div>
-            <div class="company-links">
-                <a href="https://maps.google.com/?q=Regional+Australia" target="_blank" class="company-link map-link">📍 Map</a>
-                <a href="#" class="company-link" onclick="alert('HR/MC license required. Regional DAMA programs offer relaxed requirements.'); return false;">📋 Info</a>
-            </div>
-            <div class="job-meta"><span>📍 Regional Australia</span><span> $65k-85k AUD/yr</span></div>
-            <div class="job-description">Heavy vehicle drivers needed in regional areas. DAMA programs available for African applicants with appropriate licenses [citation:6].</div>
-            <div class="button-group">
-                <a href="https://482jobs.com" target="_blank" class="apply-wa">🔍 Search</a>
-            </div>
-        </div>
+                <div class="job-card">
+                    <div class="job-title">Afrikaner Skills Visa</div>
+                    <div class="job-company">🇦🇺 Global Talent Pathway <span class="verified-badge">✓ Designated Visa</span></div>
+                    <div class="company-links">
+                        <a href="https://maps.google.com/?q=Regional+Australia" target="_blank" class="company-link map-link">📍 Map</a>
+                        <a href="https://www.globaltalentpathway.co.za" target="_blank" class="company-link">🏢 Program Site</a>
+                    </div>
+                    <div class="job-meta"><span>📍 Regional Australia</span><span> Market Rate</span></div>
+                    <div class="job-description">Specialized program for Afrikaner workers: farming, truck driving, construction, aged care, hospitality. No skills assessment. IELTS 4.5 only. Direct PR possible.</div>
+                    <div class="button-group">
+                        <a href="https://www.globaltalentpathway.co.za/info/how-the-visa-works" target="_blank" class="apply-wa">🇿🇦 Apply</a>
+                    </div>
+                </div>
 
             </div>
         </div>
+
+        <!-- ========== VERIFICATION WARNING ========== -->
+        <div class="warning-box">
+            <strong>⚠️ CRITICAL: How to Avoid Immigration Scams</strong><br><br>
+            • <strong>NEVER pay for a job offer</strong> - Legitimate employers never charge fees [citation:8]<br>
+            • <strong>Verify ALL immigration consultants</strong> on official government registers before paying [citation:8]<br>
+            • <strong>Canada:</strong> CICC register at <strong>iccrc-crcic.ca</strong> - must show "Active" status [citation:4][citation:9]<br>
+            • <strong>Australia:</strong> MARA register at <strong>mara.gov.au</strong> - valid MARN required [citation:2][citation:7]<br>
+            • <strong>UK:</strong> IAA register at <strong>gov.uk/find-an-immigration-adviser</strong> [citation:3][citation:8]<br>
+            • <strong>USA:</strong> DOJ Recognition at <strong>justice.gov/eoir</strong> [citation:5]<br>
+            • <strong>If someone says "the website is not updated" - that's a lie.</strong> Walk away [citation:8]
+        </div>
+
     </div>
 
-
-    <!-- Modern Footer -->
+    <!-- Footer -->
     <footer class="modern-footer">
         <div class="container">
             <div class="footer-content">
